@@ -1,0 +1,212 @@
+
+=====================================
+ Player's State:
+ Name: Juan
+ Token: 20
+ Maxie Count: 0
+ Maxie Collection: 
+	No maxies yet.
+=====================================
+
+--- Juan bought a REPTILE maxie for 6 tokens.
+--- Juan bought a BUG maxie for 7 tokens.
+
+=====================================
+ Player's State:
+ Name: Juan
+ Token: 7
+ Maxie Count: 2
+ Maxie Collection: 
+	[0]
+	Type: REPTILE
+	Damage: 13
+	Breed count: 0/3
+
+	[1]
+	Type: BUG
+	Damage: 15
+	Breed count: 0/3
+
+=====================================
+
+--- Juan's REPTILE maxie was selected for battle!
+	Type: REPTILE
+	Damage: 13
+	Breed count: 0/3
+
+--- AI's BIRD maxie was selected for battle!
+	Type: BIRD
+	Damage: 14
+	Breed count: 0/3
+
+
+>>> START! 
+
+--- REPTILE maxie has inflicted 14.95 damage to BIRD maxie!
+--- BIRD maxie has inflicted 11.9 damage to REPTILE maxie!
+--- REPTILE maxie has inflicted 14.95 damage to BIRD maxie!
+--- YOU WON!
+--- Gained 2 token/s
+
+=====================================
+ Player's State:
+ Name: Juan
+ Token: 9
+ Maxie Count: 2
+ Maxie Collection: 
+	[0]
+	Type: REPTILE
+	Damage: 13
+	Breed count: 0/3
+
+	[1]
+	Type: BUG
+	Damage: 15
+	Breed count: 0/3
+
+=====================================
+
+--- Juan's BUG maxie was selected for battle!
+	Type: BUG
+	Damage: 15
+	Breed count: 0/3
+
+--- AI's BUG maxie was selected for battle!
+	Type: BUG
+	Damage: 11
+	Breed count: 0/3
+
+
+>>> START! 
+
+--- BUG maxie has inflicted 15.0 damage to BUG maxie!
+--- BUG maxie has inflicted 11.0 damage to BUG maxie!
+--- BUG maxie has inflicted 15.0 damage to BUG maxie!
+--- YOU WON!
+--- Gained 2 token/s
+
+=====================================
+ Player's State:
+ Name: Juan
+ Token: 11
+ Maxie Count: 2
+ Maxie Collection: 
+	[0]
+	Type: REPTILE
+	Damage: 13
+	Breed count: 0/3
+
+	[1]
+	Type: BUG
+	Damage: 15
+	Breed count: 0/3
+
+=====================================
+
+--- Player is breeding REPTILE maxie and BUG maxie
+--- A new maxie is born!
+	Type: BUG
+	Damage: 12
+	Breed count: 0/3
+
+
+=====================================
+ Player's State:
+ Name: Juan
+ Token: 11
+ Maxie Count: 3
+ Maxie Collection: 
+	[0]
+	Type: REPTILE
+	Damage: 13
+	Breed count: 1/3
+
+	[1]
+	Type: BUG
+	Damage: 15
+	Breed count: 1/3
+
+	[2]
+	Type: BUG
+	Damage: 12
+	Breed count: 0/3
+
+=====================================
+
+--- Player is breeding REPTILE maxie and BUG maxie
+--- A new maxie is born!
+	Type: BUG
+	Damage: 12
+	Breed count: 0/3
+
+
+=====================================
+ Player's State:
+ Name: Juan
+ Token: 8
+ Maxie Count: 4
+ Maxie Collection: 
+	[0]
+	Type: REPTILE
+	Damage: 13
+	Breed count: 2/3
+
+	[1]
+	Type: BUG
+	Damage: 15
+	Breed count: 1/3
+
+	[2]
+	Type: BUG
+	Damage: 12
+	Breed count: 1/3
+
+	[3]
+	Type: BUG
+	Damage: 12
+	Breed count: 0/3
+
+=====================================
+
+--- Player is breeding REPTILE maxie and BUG maxie
+--- A new maxie is born!
+	Type: BUG
+	Damage: 13
+	Breed count: 0/3
+
+
+=====================================
+ Player's State:
+ Name: Juan
+ Token: 5
+ Maxie Count: 5
+ Maxie Collection: 
+	[0]
+	Type: REPTILE
+	Damage: 13
+	Breed count: 3/3
+
+	[1]
+	Type: BUG
+	Damage: 15
+	Breed count: 2/3
+
+	[2]
+	Type: BUG
+	Damage: 12
+	Breed count: 1/3
+
+	[3]
+	Type: BUG
+	Damage: 12
+	Breed count: 0/3
+
+	[4]
+	Type: BUG
+	Damage: 13
+	Breed count: 0/3
+
+=====================================
+
+--- Player doesn't have enough token. Breeding failed.
+--- Player doesn't have enough token. Breeding failed.

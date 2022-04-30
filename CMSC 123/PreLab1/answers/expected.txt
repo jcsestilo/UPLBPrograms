@@ -1,0 +1,15 @@
+List is empty.
+Inserting 1 as new head node
+Inserting 2 as new head node
+Inserting 3 as new head node
+List:  3 2 1
+Deleting the head node
+List:  2 1
+Inserting 3 as new head node
+List:  3 2 1
+Deleting the head node
+List:  2 1
+Deleting the head node
+List:  1
+Deleting all contents.
+List: *empty*

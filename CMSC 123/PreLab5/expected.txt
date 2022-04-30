@@ -1,0 +1,153 @@
+gcc -c main.c
+gcc -c heap.c
+gcc -o run main.o heap.o
+./run < program.cs
+Unknown command: 1
+Heap is empty.
+Printing the heap (rotated +90 degrees)...
+Empty heap!
+
+Inserting key: 14...
+Printing the heap (rotated +90 degrees)...
+14
+
+Inserting key: 27...
+Printing the heap (rotated +90 degrees)...
+27
+	14
+
+Inserting key: 20...
+Printing the heap (rotated +90 degrees)...
+	20
+27
+	14
+
+Inserting key: 10...
+Printing the heap (rotated +90 degrees)...
+	20
+27
+	14
+		10
+
+Inserting key: 25...
+Printing the heap (rotated +90 degrees)...
+	20
+27
+		14
+	25
+		10
+
+Inserting key: 22...
+Printing the heap (rotated +90 degrees)...
+	22
+		20
+27
+		14
+	25
+		10
+
+Inserting key: 5...
+Printing the heap (rotated +90 degrees)...
+		5
+	22
+		20
+27
+		14
+	25
+		10
+
+Inserting key: 18...
+Printing the heap (rotated +90 degrees)...
+		5
+	22
+		20
+27
+		14
+	25
+		18
+			10
+
+Inserting key: 23...
+Printing the heap (rotated +90 degrees)...
+		5
+	22
+		20
+27
+		14
+	25
+			18
+		23
+			10
+
+Inserting key: 30...
+Printing the heap (rotated +90 degrees)...
+		5
+	22
+		20
+30
+		25
+			14
+	27
+			18
+		23
+			10
+
+Removing root with key: 30
+Printing the heap (rotated +90 degrees)...
+		5
+	22
+		20
+27
+		14
+	25
+			18
+		23
+			10
+
+Removing root with key: 27
+Printing the heap (rotated +90 degrees)...
+		5
+	22
+		20
+25
+		14
+	23
+		18
+			10
+
+Removing root with key: 25
+Printing the heap (rotated +90 degrees)...
+		5
+	22
+		20
+23
+		14
+	18
+		10
+
+Removing root with key: 23
+Printing the heap (rotated +90 degrees)...
+	20
+		5
+22
+		14
+	18
+		10
+
+Removing root with key: 22
+Printing the heap (rotated +90 degrees)...
+	5
+20
+		14
+	18
+		10
+
+Removing all contents...
+Printing the heap (rotated +90 degrees)...
+Empty heap!
+
+Removing root with key: 20
+Heap is empty.
+Printing the heap (rotated +90 degrees)...
+Empty heap!
+

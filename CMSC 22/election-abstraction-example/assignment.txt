@@ -1,0 +1,28 @@
+Assignments
+
+1. 
+// registration period can be restarted
+// list of voters and candidates must be cleared/refreshed.
+// state of voters and candidates must also be back to initial state
+
+2. 
+// validate vote
+
+3. Main has a menu
+[1] Register as voter
+[2] File COC 
+[3] Start Election
+[4] Vote
+[5] End Election
+[0] Exit
+
+4. 
+// Online Community as an object with all netizens, wannabes and elections
+- name
+- list of netizens
+- list of wannabes
+- list of elections
+
+- display all netizens
+- display all wannabes
+- display all elections

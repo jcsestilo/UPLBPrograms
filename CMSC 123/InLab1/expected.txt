@@ -1,0 +1,17 @@
+List is empty.
+Appending 1 as new tail node
+Appending 2 as new tail node
+Appending 3 as new tail node
+List:  1 2 3
+Deleting the head node
+List:  2 3
+Deleting the head node
+List:  3
+Deleting the head node
+List: *empty*
+Inserting 3 as new head node
+List:  3
+Appending 2 as new tail node
+List:  3 2
+Deleting all contents.
+List: *empty*

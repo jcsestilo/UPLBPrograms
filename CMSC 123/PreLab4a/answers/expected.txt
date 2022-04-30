@@ -1,0 +1,140 @@
+gcc -c main.c BST.c
+gcc -o run main.o BST.o
+./run < program.cs
+Inserting key: 6
+Tree (rotated +90 degrees): 
+
+
+start----------
+
+6(p0)
+
+------------end
+
+
+Inserting key: 2
+Tree (rotated +90 degrees): 
+
+
+start----------
+
+6(p0)
+	2(p6)
+
+------------end
+
+
+Inserting key: 8
+Tree (rotated +90 degrees): 
+
+
+start----------
+
+	8(p6)
+6(p0)
+	2(p6)
+
+------------end
+
+
+Inserting key: 1
+Tree (rotated +90 degrees): 
+
+
+start----------
+
+	8(p6)
+6(p0)
+	2(p6)
+		1(p2)
+
+------------end
+
+
+Inserting key: 4
+Tree (rotated +90 degrees): 
+
+
+start----------
+
+	8(p6)
+6(p0)
+		4(p2)
+	2(p6)
+		1(p2)
+
+------------end
+
+
+Inserting key: 10
+Tree (rotated +90 degrees): 
+
+
+start----------
+
+		10(p8)
+	8(p6)
+6(p0)
+		4(p2)
+	2(p6)
+		1(p2)
+
+------------end
+
+
+Inserting key: 3
+Tree (rotated +90 degrees): 
+
+
+start----------
+
+		10(p8)
+	8(p6)
+6(p0)
+		4(p2)
+			3(p4)
+	2(p6)
+		1(p2)
+
+------------end
+
+
+Searching node with key: 6. Location: 0x7fffcd3db6e0
+Searching node with key: 5. Location: (nil)
+Removing all contents.
+Tree (rotated +90 degrees): 
+
+
+start----------
+
+
+------------end
+
+
+Inserting key: 2
+Inserting key: 1
+Inserting key: 4
+Inserting key: 3
+Tree (rotated +90 degrees): 
+
+
+start----------
+
+	4(p2)
+		3(p4)
+2(p0)
+	1(p2)
+
+------------end
+
+
+Removing all contents.
+Tree (rotated +90 degrees): 
+
+
+start----------
+
+
+------------end
+
+

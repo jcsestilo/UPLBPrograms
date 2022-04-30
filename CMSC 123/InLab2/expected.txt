@@ -1,0 +1,15 @@
+check characters from the postfixString
+char code:54 character:'6'  int value:6
+char code:50 character:'2'  int value:2
+char code:47 character:'/'  int value:-1
+char code:49 character:'1'  int value:1
+char code:50 character:'2'  int value:2
+char code:43 character:'+'  int value:-5
+char code:42 character:'*'  int value:-6
+
+check digits from the postfixString
+char code:54 character:'6'  int value:6
+char code:50 character:'2'  int value:2
+char code:49 character:'1'  int value:1
+char code:50 character:'2'  int value:2
+the postfix value of 62/12+* = 9

@@ -1,0 +1,191 @@
+gcc -c main.c BST.c
+gcc -o run main.o BST.o
+./run < program.cs
+Inserting key: 6
+Tree (rotated +90 degrees): 
+
+
+start----------
+
+6(p0)
+
+------------end
+
+
+Inserting key: 2
+Tree (rotated +90 degrees): 
+
+
+start----------
+
+6(p0)
+	2(p6)
+
+------------end
+
+
+Inserting key: 8
+Tree (rotated +90 degrees): 
+
+
+start----------
+
+	8(p6)
+6(p0)
+	2(p6)
+
+------------end
+
+
+Inserting key: 1
+Tree (rotated +90 degrees): 
+
+
+start----------
+
+	8(p6)
+6(p0)
+	2(p6)
+		1(p2)
+
+------------end
+
+
+Inserting key: 4
+Tree (rotated +90 degrees): 
+
+
+start----------
+
+	8(p6)
+6(p0)
+		4(p2)
+	2(p6)
+		1(p2)
+
+------------end
+
+
+Inserting key: 10
+Tree (rotated +90 degrees): 
+
+
+start----------
+
+		10(p8)
+	8(p6)
+6(p0)
+		4(p2)
+	2(p6)
+		1(p2)
+
+------------end
+
+
+Inserting key: 3
+Tree (rotated +90 degrees): 
+
+
+start----------
+
+		10(p8)
+	8(p6)
+6(p0)
+		4(p2)
+			3(p4)
+	2(p6)
+		1(p2)
+
+------------end
+
+
+Searching node with key: 6. Location: 0x1a25050
+Searching node with key: 5. Location: (nil)
+Minimum value: 1
+Descendant Successor of 6 is 8.
+Removing node with key: 1
+Tree (rotated +90 degrees): 
+
+
+start----------
+
+		10(p8)
+	8(p6)
+6(p0)
+		4(p2)
+			3(p4)
+	2(p6)
+
+------------end
+
+
+Removing node with key: 4
+Tree (rotated +90 degrees): 
+
+
+start----------
+
+		10(p8)
+	8(p6)
+6(p0)
+		3(p2)
+	2(p6)
+
+------------end
+
+
+Removing all contents.
+
+
+start----------
+
+	10(p8)
+8(p0)
+		3(p2)
+	2(p8)
+
+------------end
+
+
+
+start----------
+
+10(p0)
+		3(p2)
+	2(p10)
+
+------------end
+
+
+
+start----------
+
+	3(p2)
+2(p0)
+
+------------end
+
+
+
+start----------
+
+3(p0)
+
+------------end
+
+
+
+start----------
+
+
+------------end
+
+Tree (rotated +90 degrees): 
+
+
+start----------
+
+
+------------end
+
+

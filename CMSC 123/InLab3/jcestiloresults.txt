@@ -1,0 +1,7 @@
+gcc -c main2.c sort.c
+gcc -o silent main2.o sort.o
+./silent < program2.cs
+elaspsed time for bsort(a,10000,d): 0.312500
+elaspsed time for bsort(a,20000,d): 1.390625
+elaspsed time for bsort(a,40000,d): 5.359375
+elaspsed time for bsort(a,80000,d): 21.140625

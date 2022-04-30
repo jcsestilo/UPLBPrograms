@@ -1,0 +1,102 @@
+gcc -c main.c
+gcc -c closed_hashtable.c
+gcc -o run main.o closed_hashtable.o
+./run < program1.cs
+Hash table is empty.
+Inserting key 6
+Inserted key 6 with 0 collision(s)
+Hash Table:  -1  -1  -1  -1  -1  -1   6 
+
+Inserting key 15
+Inserted key 15 with 0 collision(s)
+Hash Table:  -1  15  -1  -1  -1  -1   6 
+
+Inserting key 23
+Inserted key 23 with 0 collision(s)
+Hash Table:  -1  15  23  -1  -1  -1   6 
+
+Inserting key 21
+Inserted key 21 with 0 collision(s)
+Hash Table:  21  15  23  -1  -1  -1   6 
+
+Inserting key 13
+Inserted key 13 with 4 collision(s)
+Hash Table:  21  15  23  13  -1  -1   6 
+
+Hash table is full.
+Inserting key 20
+Cannot Insert! Hash table is full.
+Hash Table:  21  15  23  13  -1  -1   6 
+
+Finding key 13
+Key: 13 found in index: 3
+Finding key 20
+Key: 20 not found!
+Hash Table:  21  15  23  13  -1  -1   6 
+
+./run < program2.cs
+Hash table is empty.
+Inserting key 6
+Inserted key 6 with 0 collision(s)
+Hash Table:  -1  -1  -1  -1  -1  -1   6 
+
+Inserting key 15
+Inserted key 15 with 0 collision(s)
+Hash Table:  -1  15  -1  -1  -1  -1   6 
+
+Inserting key 23
+Inserted key 23 with 0 collision(s)
+Hash Table:  -1  15  23  -1  -1  -1   6 
+
+Inserting key 21
+Inserted key 21 with 0 collision(s)
+Hash Table:  21  15  23  -1  -1  -1   6 
+
+Inserting key 13
+Inserted key 13 with 2 collision(s)
+Hash Table:  21  15  23  13  -1  -1   6 
+
+Hash table is full.
+Inserting key 20
+Cannot Insert! Hash table is full.
+Hash Table:  21  15  23  13  -1  -1   6 
+
+Finding key 13
+Key: 13 found in index: 3
+Finding key 20
+Key: 20 not found!
+Hash Table:  21  15  23  13  -1  -1   6 
+
+./run < program3.cs
+Hash table is empty.
+Inserting key 6
+Inserted key 6 with 0 collision(s)
+Hash Table:  -1  -1  -1  -1  -1  -1   6 
+
+Inserting key 15
+Inserted key 15 with 0 collision(s)
+Hash Table:  -1  15  -1  -1  -1  -1   6 
+
+Inserting key 23
+Inserted key 23 with 0 collision(s)
+Hash Table:  -1  15  23  -1  -1  -1   6 
+
+Inserting key 21
+Inserted key 21 with 0 collision(s)
+Hash Table:  21  15  23  -1  -1  -1   6 
+
+Inserting key 13
+Inserted key 13 with 2 collision(s)
+Hash Table:  21  15  23  13  -1  -1   6 
+
+Hash table is full.
+Inserting key 20
+Cannot Insert! Hash table is full.
+Hash Table:  21  15  23  13  -1  -1   6 
+
+Finding key 13
+Key: 13 found in index: 3
+Finding key 20
+Key: 20 not found!
+Hash Table:  21  15  23  13  -1  -1   6 
+

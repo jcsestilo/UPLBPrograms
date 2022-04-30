@@ -1,0 +1,10 @@
+gcc -c main.c
+gcc -c adj_list.c
+gcc -o run main.o adj_list.o
+./run < test1.in
+1 -> {2, 3}
+2 -> {1, 3, 4, 5}
+3 -> {1, 2, 5}
+4 -> {2, 5}
+5 -> {2, 3, 4}
+4 and 5 are adjacent

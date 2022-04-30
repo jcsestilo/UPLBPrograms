@@ -1,0 +1,21 @@
+gcc -c main_queue.c queue.c list.c
+gcc -o queue main_queue.o queue.o list.o
+./queue < program.cs
+Queue is empty.
+Enqueueing 3
+Enqueueing 2
+Enqueueing 1
+Enqueueing 4
+Queue:  3 2 1 4
+Queue is not empty.
+Dequeueing
+Dequeueing
+Dequeueing
+Dequeueing
+Queue: *empty*
+Enqueueing 1
+Enqueueing 2
+Enqueueing 3
+Queue:  1 2 3
+Dequeueing all contents.
+Queue: *empty*

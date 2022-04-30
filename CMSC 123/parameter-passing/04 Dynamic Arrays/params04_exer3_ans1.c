@@ -1,0 +1,105 @@
+//params04_exer3_ans1.c
+//Passing a dynamically allocated array as parameter to functions
+
+//Answer to params04_exer3.c
+
+#include<stdio.h>
+#include<malloc.h> //for malloc function
+#include<stdlib.h> //for exit function
+
+
+void input(int *a, int n){ 
+
+	//"a in main" has the address of "a[0] in main"
+	
+	//if we pass "a in main" to "a in input" pointer, then, 
+	//"a in input" will now be functionally the same as "a in main"
+
+	//"a in input" will also have the address of  "a[0] in main"
+	
+	//"a[0] in input" is now the same "a[0] in main" and the rest of a[i]
+
+	//passing dynamically allocated 1D array is the same as static 1D array
+	
+	//BUT, not for 2D or multi-dimensional arrays (see params05.c and params06.c) 
+
+	int i;
+	
+	for(i=0;i<n;i++) {
+		printf("Enter an integer: ");
+		scanf("%i",&a[i]);
+	}
+	
+}
+
+void output(int *a, int n){ //see comments in input
+	int i;
+	
+	for(i=0;i<n;i++) {
+		printf("a[%i]==%i\n",i,a[i]);
+	}	
+}
+
+void duplicate(int **aptr, int *nptr){ //nptr has the address of n in main
+									   //aptr has also the address of a in main
+									   //  we need this to change the "address value" 
+									   //  stored in a in main to the address of the newly
+									   //  allocated array
+	int *new;		// will be used for the resized array
+	int n=*nptr;	// n here in duplicate has now the value of n in main
+	int *a=*aptr;	// a here in duplicate is a separate pointer from a in main
+					//   but both pointers point to the same a[0] elements
+					// NOTE: before we end function duplicate, we will update
+					//   *nptr and *aptr
+	int i;
+	
+	new=malloc(n*2*sizeof(int)); //allocate a new array with twice the
+	                              //the size of array a in main
+	
+	for(i=0; i<n; i++)  //copy a in main as the first half of new
+		new[i]=(*aptr)[i];
+	
+	for(i=0; i<n; i++)	//copy a in main also as the second half of new
+		new[i+n]=a[i]; 
+	
+	//now we change the values of the main variables using indirection
+	free(*aptr); 	//first, we free a in main
+	*aptr=new;		//then, we assign the value of new, which is the address of
+					//    of the first element of the resized array 
+					//    to a in main via *aptr
+	*nptr=n*2;		//finally, we also double the value of n in main via *nptr
+	
+}
+
+int main(){
+	int i, n=5;
+	//int a[n];
+	
+	//dynamic allocation using a pointer "int *a"
+	int *a = (int *)malloc(n*sizeof(int));
+	if (a==NULL){
+		printf("insufficient allocation error\n");
+		exit(1);
+	}
+
+	input(a,n);
+	output(a,n);
+	duplicate(&a, &n); //duplicate function has to do the following
+	                     //1. double the value of n, e.g. from n=5 to 10. 
+						 //   we need to change the value of n while in duplicate function
+						 //   that's why we have to pass its value
+						 
+						 //2. resize, size of array a by doubling it, e.g. from 5 elements to 10
+						 //   retain the original elements entered by the user as the first half
+						 //     of the resized array.
+						 //   copy the first half of the resized array, to its secondhalf,
+						 //   thereby duplicating the original array,
+						 //   e.g. from [1][2][3][4][5] to [1][2][3][4][5][1][2][3][4][5]
+	output(a,n);
+	
+	//dynamic de-allocation
+	if (a!=NULL){
+		free(a);  //frees or allows other programs to use the memory
+				  // initially assigned to "int *a"
+	}
+}

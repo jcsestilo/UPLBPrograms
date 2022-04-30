@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 7 elements to &apos;08_LECT_EXAMPLES/src&apos;&#x0D;&#x0A;- Original project: &apos;08_LECT_EXAMPLES - GUI I&apos;&#x0D;&#x0A;- Destination element: &apos;08_LECT_EXAMPLES/src&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     HelloWorld.java&#x0D;&#x0A;     pvz.gif&#x0D;&#x0A;     background.jpg&#x0D;&#x0A;     VBoxDemo.java&#x0D;&#x0A;     VBoxDemo2.java&#x0D;&#x0A;     GridPaneDemo2.java&#x0D;&#x0A;     GridPaneDemo.java" description="Copy files" destination="=08_LECT_EXAMPLES/src" element1="src/HelloWorld.java" element2="src/pvz.gif" element3="src/background.jpg" element4="src/VBoxDemo.java" element5="src/VBoxDemo2.java" element6="src/GridPaneDemo2.java" element7="src/GridPaneDemo.java" files="7" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1637071820520" units="0" version="1.0"/>
+</session>

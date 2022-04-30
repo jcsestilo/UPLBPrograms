@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move 6 elements to &apos;09-kartWithGUI/src&apos;&#x0D;&#x0A;- Original project: &apos;09-kart-with-gui&apos;&#x0D;&#x0A;- Destination element: &apos;09-kartWithGUI/src&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     Main.java&#x0D;&#x0A;     GameTimer.java&#x0D;&#x0A;     kart.png&#x0D;&#x0A;     Game.java&#x0D;&#x0A;     Kart.java&#x0D;&#x0A;     Sprite.java&#x0D;&#x0A;- Update references to refactored element" description="Move files" destination="=09-kartWithGUI/src" element1="src/Main.java" element2="src/GameTimer.java" element3="src/kart.png" element4="src/Game.java" element5="src/Kart.java" element6="src/Sprite.java" files="6" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1639020069756" units="0" version="1.0"/>
+</session>

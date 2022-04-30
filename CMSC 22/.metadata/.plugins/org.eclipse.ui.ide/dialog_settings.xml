@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="C:\Users\colee\Desktop\Programs\CMSC 22\CorderoEstiloProject\CorderoEstiloProj"/>
+		<item value="C:\Users\colee\Desktop\Programs\CMSC 22\Everwing-FX"/>
+		<item value="C:\Users\colee\Desktop\Programs\CMSC 22\09_LAB_EXAMPLES"/>
+		<item value="C:\Users\colee\Desktop\Programs\CMSC 22\09-kart-concurrency"/>
+		<item value="C:\Users\colee\Desktop\Programs\CMSC 22\09-kart-with-gui"/>
+		<item value="C:\Users\colee\Desktop\Programs\CMSC 22\FinalProjDraft"/>
+		<item value="C:\Users\colee\Desktop\Programs\CMSC 22\MiniProject_CorderoEstilo"/>
+		<item value="C:\Users\colee\Desktop\Programs\CMSC 22\08_LAB_EXAMPLES"/>
+		<item value="C:\Users\colee\Desktop\Programs\CMSC 22\08_LECT_EXAMPLES - GUI I"/>
+		<item value="C:\Users\colee\Desktop\Programs\CMSC 22\Wk07 Concurrency"/>
+		<item value="C:\Users\colee\Desktop\Programs\CMSC 22\07_LECT_EXAMPLE"/>
+		<item value="C:\Users\colee\Desktop\Programs\CMSC 22\07_LECT_EXAMPLE\Lect-concurrency-bank"/>
+		<item value="C:\Users\colee\Desktop\Programs\CMSC 22\exer07_B_template"/>
+		<item value="C:\Users\colee\Desktop\Programs\CMSC 22\school-polymorphism-example"/>
+		<item value="C:\Users\colee\Desktop\Programs\CMSC 22\06_LAB_EXER_TEMPLATE_B"/>
+		<item value="C:\Users\colee\Desktop\Programs\CMSC 22\05_LAB_EXER_B - Template"/>
+		<item value="C:\Users\colee\Desktop\Programs\CMSC 22\04_LECT_EXAMPLES - everwing-encapsulation"/>
+		<item value="C:\Users\colee\Desktop\Programs\CMSC 22\04_LAB_EXER_TEMPLATE_B"/>
+		<item value="C:\Users\colee\Desktop\Programs\CMSC 22\04_LAB_EXER_TEMPLATE_B\game"/>
+		<item value="C:\Users\colee\Desktop\Programs\CMSC 22\election-abstraction-example"/>
+		<item value="C:\Users\colee\Desktop\Programs\CMSC 22\Lab-Abstraction-Baby-Problem-Domain2"/>
+		<item value="C:\Users\colee\Desktop\Programs\CMSC 22\03_LAB_EXER_TEMPLATE_B"/>
+	</list>
+	<section name="ExternalProjectImportWizard">
+		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\colee\Desktop\Programs\CMSC 22"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+	<section name="NewWizardAction">
+	</section>
+</section>

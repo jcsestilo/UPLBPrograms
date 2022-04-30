@@ -1,0 +1,21 @@
+gcc -c main_stack.c stack.c list.c
+gcc -o stack main_stack.o stack.o list.o
+./stack < program.cs
+Stack is empty.
+Pushing 3
+Pushing 2
+Pushing 1
+Pushing 4
+Stack:  4 1 2 3
+Stack is not empty.
+Popping
+Popping
+Popping
+Popping
+Stack: *empty*
+Pushing 1
+Pushing 2
+Pushing 3
+Stack:  3 2 1
+Popping all contents.
+Stack: *empty*

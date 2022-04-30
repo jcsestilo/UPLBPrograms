@@ -1,0 +1,434 @@
+**LOG: Customer Polo Benavent is trying to buy Mitsubishi 2009 Montero Sport from RideHome Car Marketplace.
+**LOG: The item Mitsubishi 2009 Montero Sport was successfully bought by customer Polo Benavent.
+**LOG: Customer Polo Benavent is trying to buy Nissan 2017 Juke from RideHome Car Marketplace.
+**LOG: The item Nissan 2017 Juke was successfully bought by customer Polo Benavent.
+**LOG: Customer Polo Benavent is trying to buy Honda 2000 Accord from RideHome Car Marketplace.
+**LOG: The item Honda 2000 Accord was successfully bought by customer Polo Benavent.
+
+==========[ CUSTOMER STATE ]==========
+	Name: Polo Benavent
+	Address: Calamba, Laguna
+	Mobile Number: 09998765431
+	Shopping Coins: 360000.0
+
+	Purchases: 
+
+	Item 1: 
+	Brand: Mitsubishi
+	Model: 2009 Montero Sport
+	Price: 520000.0
+	Condition: good
+	Classification: suv
+	Demand Points: 3
+
+	Item 2: 
+	Brand: Nissan
+	Model: 2017 Juke
+	Price: 630000.0
+	Condition: good
+	Classification: crossover
+	Demand Points: 3
+
+	Item 3: 
+	Brand: Honda
+	Model: 2000 Accord
+	Price: 90000.0
+	Condition: good
+	Classification: sedan
+	Demand Points: 3
+======================================
+
+	RideHome Car Marketplace Product List:
+
+	Item 2: 
+	Brand: Toyota
+	Model: 2011 Fortuner
+	Price: 620000.0
+	Condition: good
+	Classification: suv
+	Demand Points: 6
+
+	Item 3: 
+	Brand: Chevrolet
+	Model: 2019 Trailblazer
+	Price: 980000.0
+	Condition: mint
+	Classification: suv
+	Demand Points: 6
+
+	Item 4: 
+	Brand: Hyundai
+	Model: 2014 Tucson
+	Price: 570000.0
+	Condition: good
+	Classification: suv
+	Demand Points: 6
+
+	Item 5: 
+	Brand: Nissan
+	Model: 2019 Terra
+	Price: 1440000.0
+	Condition: like new
+	Classification: suv
+	Demand Points: 6
+
+	Item 7: 
+	Brand: Subaru
+	Model: 2014 Forester
+	Price: 450000.0
+	Condition: good
+	Classification: crossover
+	Demand Points: 6
+
+	Item 8: 
+	Brand: Ford
+	Model: 2015 Ecosport
+	Price: 590000.0
+	Condition: mint
+	Classification: crossover
+	Demand Points: 6
+
+	Item 9: 
+	Brand: Hyundai
+	Model: 2020 Kona
+	Price: 700000.0
+	Condition: like new
+	Classification: crossover
+	Demand Points: 6
+
+	Item 10: 
+	Brand: Nissan
+	Model: 2016 Juke
+	Price: 610000.0
+	Condition: good
+	Classification: crossover
+	Demand Points: 6
+
+	Item 11: 
+	Brand: Mitsubishi
+	Model: 1996 Lancer
+	Price: 68000.0
+	Condition: good
+	Classification: sedan
+	Demand Points: 6
+
+	Item 13: 
+	Brand: Toyota
+	Model: 20202 Vios
+	Price: 650000.0
+	Condition: mint
+	Classification: sedan
+	Demand Points: 6
+
+	Item 14: 
+	Brand: Subaru
+	Model: 2013 Legacy
+	Price: 838000.0
+	Condition: like new
+	Classification: sedan
+	Demand Points: 6
+
+	Item 15: 
+	Brand: Chevrolet
+	Model: 2017 Sail
+	Price: 458000.0
+	Condition: good
+	Classification: sedan
+	Demand Points: 6
+
+**LOG: Customer Rebeka Parilla is trying to buy Toyota 2011 Fortuner from RideHome Car Marketplace.
+**LOG: The item Toyota 2011 Fortuner was successfully bought by customer Rebeka Parilla.
+**LOG: A rebate of 31000.0 is added back to your account.
+**LOG: Customer Rebeka Parilla is trying to buy Subaru 2014 Forester from RideHome Car Marketplace.
+**LOG: The item Subaru 2014 Forester was successfully bought by customer Rebeka Parilla.
+**LOG: A rebate of 22500.0 is added back to your account.
+**LOG: Customer Rebeka Parilla is trying to buy Toyota 20202 Vios from RideHome Car Marketplace.
+**LOG: The item Toyota 20202 Vios was successfully bought by customer Rebeka Parilla.
+**LOG: A rebate of 32500.0 is added back to your account.
+
+==========[ CUSTOMER STATE ]==========
+	Name: Rebeka Parilla
+	Address: Los Banos, Laguna
+	Mobile Number: 09998765433
+	Shopping Coins: 166000.0
+
+	Purchases: 
+
+	Item 1: 
+	Brand: Toyota
+	Model: 2011 Fortuner
+	Price: 620000.0
+	Condition: good
+	Classification: suv
+	Demand Points: 6
+
+	Item 2: 
+	Brand: Subaru
+	Model: 2014 Forester
+	Price: 450000.0
+	Condition: good
+	Classification: crossover
+	Demand Points: 6
+
+	Item 3: 
+	Brand: Toyota
+	Model: 20202 Vios
+	Price: 650000.0
+	Condition: mint
+	Classification: sedan
+	Demand Points: 6
+======================================
+
+	RideHome Car Marketplace Product List:
+
+	Item 3: 
+	Brand: Chevrolet
+	Model: 2019 Trailblazer
+	Price: 980000.0
+	Condition: mint
+	Classification: suv
+	Demand Points: 9
+
+	Item 4: 
+	Brand: Hyundai
+	Model: 2014 Tucson
+	Price: 570000.0
+	Condition: good
+	Classification: suv
+	Demand Points: 9
+
+	Item 5: 
+	Brand: Nissan
+	Model: 2019 Terra
+	Price: 1440000.0
+	Condition: like new
+	Classification: suv
+	Demand Points: 9
+
+	Item 8: 
+	Brand: Ford
+	Model: 2015 Ecosport
+	Price: 590000.0
+	Condition: mint
+	Classification: crossover
+	Demand Points: 9
+
+	Item 9: 
+	Brand: Hyundai
+	Model: 2020 Kona
+	Price: 700000.0
+	Condition: like new
+	Classification: crossover
+	Demand Points: 9
+
+	Item 10: 
+	Brand: Nissan
+	Model: 2016 Juke
+	Price: 610000.0
+	Condition: good
+	Classification: crossover
+	Demand Points: 9
+
+	Item 11: 
+	Brand: Mitsubishi
+	Model: 1996 Lancer
+	Price: 68000.0
+	Condition: good
+	Classification: sedan
+	Demand Points: 9
+
+	Item 14: 
+	Brand: Subaru
+	Model: 2013 Legacy
+	Price: 838000.0
+	Condition: like new
+	Classification: sedan
+	Demand Points: 9
+
+	Item 15: 
+	Brand: Chevrolet
+	Model: 2017 Sail
+	Price: 458000.0
+	Condition: good
+	Classification: sedan
+	Demand Points: 9
+
+**LOG: Customer Lu Montesinos is trying to buy Chevrolet 2019 Trailblazer from RideHome Car Marketplace.
+**LOG: SALE! Get Hyundai 2014 Tucson at 15% off in good condition. From 570000.0 to 484500.0 only!
+**LOG: SALE! Get Nissan 2019 Terra at 5% off in like new condition. From 1440000.0 to 1368000.0 only!
+**LOG: The item Chevrolet 2019 Trailblazer was successfully bought by customer Lu Montesinos.
+**LOG: Customer Lu Montesinos is trying to buy Ford 2015 Ecosport from RideHome Car Marketplace.
+**LOG: SALE! Get Hyundai 2020 Kona at 5% off in like new condition. From 700000.0 to 665000.0 only!
+**LOG: SALE! Get Nissan 2016 Juke at 15% off in good condition. From 610000.0 to 518500.0 only!
+**LOG: The item Ford 2015 Ecosport was successfully bought by customer Lu Montesinos.
+**LOG: Customer Lu Montesinos is trying to buy Subaru 2013 Legacy from RideHome Car Marketplace.
+**LOG: Subaru 2013 Legacy cannot be purchased because of insufficient funds.
+
+==========[ CUSTOMER STATE ]==========
+	Name: Lu Montesinos
+	Address: San Pedro, Laguna
+	Mobile Number: 09998765432
+	Shopping Coins: 130000.0
+
+	Purchases: 
+
+	Item 1: 
+	Brand: Chevrolet
+	Model: 2019 Trailblazer
+	Price: 980000.0
+	Condition: mint
+	Classification: suv
+	Demand Points: 9
+
+	Item 2: 
+	Brand: Ford
+	Model: 2015 Ecosport
+	Price: 590000.0
+	Condition: mint
+	Classification: crossover
+	Demand Points: 9
+======================================
+
+	RideHome Car Marketplace Product List:
+
+	Item 4: 
+	Brand: Hyundai
+	Model: 2014 Tucson
+	Price: 484500.0
+	Condition: good
+	Classification: suv
+	Demand Points: 2
+
+	Item 5: 
+	Brand: Nissan
+	Model: 2019 Terra
+	Price: 1368000.0
+	Condition: like new
+	Classification: suv
+	Demand Points: 2
+
+	Item 9: 
+	Brand: Hyundai
+	Model: 2020 Kona
+	Price: 665000.0
+	Condition: like new
+	Classification: crossover
+	Demand Points: 2
+
+	Item 10: 
+	Brand: Nissan
+	Model: 2016 Juke
+	Price: 518500.0
+	Condition: good
+	Classification: crossover
+	Demand Points: 2
+
+	Item 11: 
+	Brand: Mitsubishi
+	Model: 1996 Lancer
+	Price: 68000.0
+	Condition: good
+	Classification: sedan
+	Demand Points: 9
+
+	Item 14: 
+	Brand: Subaru
+	Model: 2013 Legacy
+	Price: 838000.0
+	Condition: like new
+	Classification: sedan
+	Demand Points: 9
+
+	Item 15: 
+	Brand: Chevrolet
+	Model: 2017 Sail
+	Price: 458000.0
+	Condition: good
+	Classification: sedan
+	Demand Points: 9
+
+**LOG: Customer Omar Shanaa is trying to buy Mitsubishi 2009 Montero Sport from RideHome Car Marketplace.
+**LOG: The item Mitsubishi 2009 Montero Sport is not available in the RideHome Car Marketplace.
+
+==========[ CUSTOMER STATE ]==========
+	Name: Omar Shanaa
+	Address: Bay, Laguna
+	Mobile Number: 09998765434
+	Shopping Coins: 900000.0
+
+	Purchases: 
+======================================
+**LOG: Customer Samuel Dominguez is trying to buy Nissan 2019 Terra from RideHome Car Marketplace.
+**LOG: Nissan 2019 Terra cannot be purchased because of insufficient funds.
+
+==========[ CUSTOMER STATE ]==========
+	Name: Samuel Dominguez
+	Address: San Pablo, Laguna
+	Mobile Number: 09998765435
+	Shopping Coins: 90000.0
+
+	Purchases: 
+======================================
+**LOG: Customer Polo Benavent is trying to buy Hyundai 2020 Kona from RideHome Car Marketplace.
+**LOG: Maximum number of products is reached.
+
+==========[ CUSTOMER STATE ]==========
+	Name: Polo Benavent
+	Address: Calamba, Laguna
+	Mobile Number: 09998765431
+	Shopping Coins: 360000.0
+
+	Purchases: 
+
+	Item 1: 
+	Brand: Mitsubishi
+	Model: 2009 Montero Sport
+	Price: 520000.0
+	Condition: good
+	Classification: suv
+	Demand Points: 3
+
+	Item 2: 
+	Brand: Nissan
+	Model: 2017 Juke
+	Price: 630000.0
+	Condition: good
+	Classification: crossover
+	Demand Points: 3
+
+	Item 3: 
+	Brand: Honda
+	Model: 2000 Accord
+	Price: 90000.0
+	Condition: good
+	Classification: sedan
+	Demand Points: 3
+======================================
+**LOG: Customer Omar Shanaa is trying to buy Chevrolet 2017 Sail from RideHome Car Marketplace.
+**LOG: SALE! Get Mitsubishi 1996 Lancer at 15% off in good condition. From 68000.0 to 57800.0 only!
+**LOG: SALE! Get Subaru 2013 Legacy at 5% off in like new condition. From 838000.0 to 796100.0 only!
+**LOG: The item Chevrolet 2017 Sail was successfully bought by customer Omar Shanaa.
+**LOG: A rebate of 22900.0 is added back to your account.
+
+==========[ CUSTOMER STATE ]==========
+	Name: Omar Shanaa
+	Address: Bay, Laguna
+	Mobile Number: 09998765434
+	Shopping Coins: 464900.0
+
+	Purchases: 
+
+	Item 1: 
+	Brand: Chevrolet
+	Model: 2017 Sail
+	Price: 458000.0
+	Condition: good
+	Classification: sedan
+	Demand Points: 9
+======================================
+
+==========[ MARKETPLACE STATE ]==========
+	Marketplace: RideHome Car Marketplace
+	Total Income: 4988000.0
+	Total Items: 6
+=========================================

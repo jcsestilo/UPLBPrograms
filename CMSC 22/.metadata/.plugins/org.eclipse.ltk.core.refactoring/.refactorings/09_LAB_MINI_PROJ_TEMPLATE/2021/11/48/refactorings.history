@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 elements to &apos;MiniProject_CorderoEstilo/src&apos;&#x0D;&#x0A;- Original project: &apos;09_LAB_MINI_PROJ_TEMPLATE&apos;&#x0D;&#x0A;- Destination element: &apos;MiniProject_CorderoEstilo/src&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     miniprojtemplate&#x0D;&#x0A;     images" description="Copy folders" destination="=MiniProject_CorderoEstilo/src" element1="src/miniprojtemplate" element2="src/images" files="0" flags="589830" folders="2" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1637659448290" units="0" version="1.0"/>
+</session>

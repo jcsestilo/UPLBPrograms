@@ -1,0 +1,3 @@
+gcc -c main2.c sort.c
+gcc -o silent main2.o sort.o
+./silent < program2.cs

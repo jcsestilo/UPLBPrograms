@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move 2 elements to &apos;09-kartConcurrency/src&apos;&#x0D;&#x0A;- Original project: &apos;09-kart-concurrency&apos;&#x0D;&#x0A;- Destination element: &apos;09-kartConcurrency/src&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     Kart.java&#x0D;&#x0A;     Main.java&#x0D;&#x0A;- Update references to refactored element" description="Move files" destination="=09-kartConcurrency/src" element1="src/Kart.java" element2="src/Main.java" files="2" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1639020176161" units="0" version="1.0"/>
+</session>

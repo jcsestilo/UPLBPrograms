@@ -1,0 +1,12 @@
+gcc -c main.c
+gcc -c graph_traversal.c adj_list.c stack.h stack.c queue.c list.c
+gcc -o run main.o graph_traversal.o adj_list.o stack.o queue.o list.o
+./run < test1.in
+1 -> {2, 3}
+2 -> {1, 3, 4, 5}
+3 -> {1, 2, 5}
+4 -> {2, 5}
+5 -> {2, 3, 4}
+DFSr: 1 2 3 5 4 
+ DFS: 1 3 5 4 2 
+ BFS: 1 2 3 4 5 

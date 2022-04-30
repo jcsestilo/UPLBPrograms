@@ -1,0 +1,2 @@
+file sample2
+set disassembly-flavor intel
