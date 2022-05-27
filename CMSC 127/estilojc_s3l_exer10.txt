@@ -1,0 +1,92 @@
+1.
+\c uaap
+
+2.
+\dt
+
+3.
+\d cheerdancehost
+
+4.
+{
+   "selector": {
+      "rank": "Champion"
+   }
+}
+
+5.
+{
+   "selector": {
+      "yearfounded":{ "$lt": 1932}
+  },
+  "sort":[
+    { "membername": "desc" } 
+    ],
+   "fields":[
+     "membername",
+     "memberfullname",
+     "yearmembership"
+    ]
+}
+
+6.
+{
+  "selector": {
+      "yearfounded":{ "$in": [1859, 1911, 1611] }
+  },
+  "sort":[
+    { "yearmembership": "asc" }
+    ],
+  "fields":[
+     "membername",
+     "yearfounded"
+    ]
+}
+
+7.
+{
+   "selector": {
+    "$or":[
+      { "yearmembership": { "$lt": 1953} },
+      { "yearfounded": 1946 }
+      ]
+   },
+   "sort":[
+    { "membername": "asc" }
+    ],
+   "fields":[
+     "membername",
+     "yearfounded",
+     "yearmembership"
+     ]
+}
+
+8.
+{
+  "selector": {
+    "$or":[
+      { "yearmembership":{ "$in": [1978, 1938, 1952] } },
+      { "memberfullname": { "$regex": "University%" } }
+      ]
+  },
+  "fields":[
+     "memberfullname",
+     "yearfounded",
+     "membername"
+    ]
+}
+
+9.
+function (doc) {
+  if(doc.rank == "Champion"){
+    emit(doc.uaapyear, [doc.membername, doc.rank]);
+  }
+}
+
+10.
+function (doc) {
+  if(doc.yearfounded==1911 || doc.membername=="UP"){
+    emit(doc.membername, [doc.yearfounded, doc.yearmembership]);
+  }
+}
+

@@ -1,0 +1,8 @@
+file a.out
+set disassembly-flavor intel
+b*exit_here
+r
+x/5dh &num_arr
+x/db &all_negative
+x/dh &largest
+quit
