@@ -6,7 +6,9 @@
 
 NUMBER [0-9]+(\.[0-9]+)?
 SPACE [[:space:]]
-IDENTIFIER [a-zA-Z]
+
+HEXA H[A-F0-9]+
+OCTA O[0-7]+
 
 %%
 "+"			{return ADD;}
@@ -17,12 +19,14 @@ IDENTIFIER [a-zA-Z]
 "("         {return LEFT;}
 ")"         {return RIGHT;}
 "="         {return ASSIGN;}
+{HEXA}      {yylval.number = strtol(&yytext[1], NULL, 16); return NUMBER;}
+{OCTA}      {yylval.number = strtol(&yytext[1], NULL, 8); return NUMBER;}
 \n          {return EOL;}
+[a-z]       {yylval.id = yytext[0]; return IDENTIFIER;}
 {NUMBER}	{yylval.number = atof(yytext); return NUMBER;}
-{IDENTIFIER} {yylval.id=yytext[0]; return IDENTIFIER;}
 {SPACE}     {/*ignore white space*/}
 "exit"		{return QUIT;}
 .           {printf("\nUnrecognized string %c\n", *yytext);}
 %%
-/* "O"         {return OCTA;}
-"H"         {return HEXA;} */
+
+int yywrap (void) {return 1;}

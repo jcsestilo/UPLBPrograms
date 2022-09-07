@@ -50,18 +50,18 @@ extern int yydebug;
   enum yytokentype
   {
     NUMBER = 258,
-    IDENTIFIER = 259,
-    ASSIGN = 260,
-    ADD = 261,
-    SUB = 262,
-    MUL = 263,
-    DIV = 264,
-    POWER = 265,
-    NEGATIVE = 266,
-    LEFT = 267,
-    RIGHT = 268,
-    EOL = 269,
-    QUIT = 270
+    ADD = 259,
+    SUB = 260,
+    MUL = 261,
+    DIV = 262,
+    POWER = 263,
+    NEGATIVE = 264,
+    LEFT = 265,
+    RIGHT = 266,
+    ASSIGN = 267,
+    EOL = 268,
+    QUIT = 269,
+    IDENTIFIER = 270
   };
 #endif
 
@@ -69,7 +69,7 @@ extern int yydebug;
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 union YYSTYPE
 {
-#line 15 "calc.y"
+#line 19 "calc.y"
 
 	double number;
 	char id;
