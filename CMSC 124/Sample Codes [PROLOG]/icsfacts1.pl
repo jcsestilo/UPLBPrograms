@@ -1,0 +1,10 @@
+female(kat).
+female(dja).
+female(berna).
+female(monina).
+male(regi).
+male(clinton).
+male(perico).
+male(jm).
+playsViolin(dja).
+party.
