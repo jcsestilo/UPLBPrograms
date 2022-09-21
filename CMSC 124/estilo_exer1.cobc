@@ -1,0 +1,98 @@
+IDENTIFICATION DIVISION.
+PROGRAM-ID. EXERCISE1.
+DATA DIVISION.
+    WORKING-STORAGE SECTION.
+        77 EXITED PIC 9 VALUE 0.
+        77 CHOICE PIC 9 VALUE 0.
+        77 ARRAYSIZE PIC 9 VALUE 5.
+        77 QUOTIENT PIC 9.
+        77 REMAIN PIC 9.
+        77 LARGESTODD PIC 9 VALUE 0.
+        77 FILLARRAYINPUT PIC 9(5).
+        77 COUNTING PIC 9.
+        77 TOTALCOUNTS PIC 9.
+        77 TEMP PIC 9.
+        01 MYARRAY.
+            02 NUM PIC 9 OCCURS 5 TIMES INDEXED BY IDX.
+PROCEDURE DIVISION.
+    PERFORM PMENU UNTIL EXITED = 6.
+    STOP RUN.
+    PMENU.
+    DISPLAY " MENU ".
+    DISPLAY " [1] Fill Array ".
+    DISPLAY " [2] Print Array ".
+    DISPLAY " [3] Find the Duplicate ".
+    DISPLAY " [4] Largest Odd Number ".
+    DISPLAY " [5] Palindrome Checker ".
+    DISPLAY " [6] Exit ".
+    DISPLAY " Choice :  " WITH NO ADVANCING .
+    ACCEPT CHOICE.
+    IF CHOICE = 1
+        DISPLAY " FILL ARRAY "
+        PERFORM FILLARRAY VARYING IDX FROM 1 BY 1 UNTIL IDX>ARRAYSIZE
+    ELSE
+        IF CHOICE = 2
+            DISPLAY " PRINT ARRAY "
+            PERFORM PRINTARRAY VARYING IDX FROM 1 BY 1 UNTIL IDX>ARRAYSIZE
+            DISPLAY " "
+        ELSE
+            IF CHOICE = 3
+                DISPLAY " FIND THE DUPLICATE "
+                PERFORM FINDTHEDUPLICATE VARYING IDX FROM 1 BY 1 UNTIL TOTALCOUNTS>=5
+            ELSE
+                IF CHOICE = 4
+                    DISPLAY " LARGEST ODD NUMBER "
+                    PERFORM FINDLARGESTODD VARYING IDX FROM 1 BY 1 UNTIL IDX>ARRAYSIZE
+                    DISPLAY " LARGEST ODD IN ARRAY : " LARGESTODD
+                ELSE
+                    IF CHOICE = 5
+                        DISPLAY " PALINDROME CHECKER "
+                        PERFORM CHECKIFPALINDROME
+                    ELSE
+                        IF CHOICE = 6
+                            DISPLAY " EXIT "
+                            MOVE 6 TO EXITED
+                        ELSE
+                            DISPLAY " INVALID INPUT. TRY AGAIN "
+                        END-IF
+                    END-IF
+                END-IF
+            END-IF
+        END-IF
+    END-IF.
+    
+    FILLARRAY.
+    ACCEPT NUM(IDX).
+    EXIT.
+    
+    PRINTARRAY.
+    DISPLAY NUM(IDX) " " WITH NO ADVANCING.
+    EXIT.
+    
+    FINDTHEDUPLICATE.
+    MOVE 0 TO COUNTING.
+    INSPECT MYARRAY TALLYING COUNTING FOR ALL NUM(IDX).
+    MOVE TOTALCOUNTS TO TEMP.
+    ADD COUNTING TO TEMP GIVING TOTALCOUNTS.
+    IF COUNTING > 1
+        DISPLAY NUM(IDX)
+    END-IF.
+    EXIT.
+    
+    
+    FINDLARGESTODD.
+    DIVIDE NUM(IDX) BY 2 GIVING QUOTIENT REMAINDER REMAIN.
+    IF REMAIN IS NOT EQUAL TO 0
+        IF NUM(IDX) > LARGESTODD
+            MOVE NUM(IDX) TO LARGESTODD
+        END-IF
+    END-IF.
+    EXIT.
+    
+    CHECKIFPALINDROME.
+    IF MYARRAY = FUNCTION REVERSE(MYARRAY)
+        DISPLAY " ARRAY ELEMENTS ARE PALINDROME! "
+    ELSE
+        DISPLAY " ARRAY ELEMENTS ARE NOT PALINDROME! "
+    END-IF.
+    EXIT.
