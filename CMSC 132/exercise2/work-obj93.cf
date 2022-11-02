@@ -1,0 +1,7 @@
+v 4
+file . "exercise2_tb.vhdl" "7cded9b98f24673225a1bf9bcef39dd155dca802" "20220915142614.505":
+  entity exercise2_tb at 4( 44) + 0 on 13;
+  architecture behav of exercise2_tb at 7( 86) + 0 on 14;
+file . "exercise2.vhdl" "3959ecb3e155fe49499986085c1a6dbfa00fa91c" "20220915142551.571":
+  entity exercise2 at 4( 44) + 0 on 11;
+  architecture rtl of exercise2 at 8( 145) + 0 on 12;

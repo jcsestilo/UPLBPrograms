@@ -1,0 +1,13 @@
+v 4
+file . "exercise2.vhdl" "3959ecb3e155fe49499986085c1a6dbfa00fa91c" "20220915142245.469":
+  entity exercise2 at 4( 44) + 0 on 21;
+  architecture rtl of exercise2 at 8( 145) + 0 on 22;
+file . "xorsample_tb2.vhdl" "645f38e1bdcaca411bb712d062f63aac04c2db10" "20220915140507.475":
+  entity xorsample_tb2 at 2( 31) + 5 on 17;
+  architecture behav of xorsample_tb2 at 5( 93) + 5 on 18;
+file . "exercise2_tb.vhdl" "7cded9b98f24673225a1bf9bcef39dd155dca802" "20220915135609.778":
+  entity exercise2_tb at 4( 44) + 0 on 13;
+  architecture behav of exercise2_tb at 7( 86) + 0 on 14;
+file . "xorsample2.vhdl" "9fd3a6ffef1833780b9f43ea6130949b59554dc0" "20220915140440.329":
+  entity xorsample2 at 1( 0) + 0 on 15;
+  architecture rtl of xorsample2 at 5( 101) + 5 on 16;

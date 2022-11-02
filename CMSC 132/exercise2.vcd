@@ -1,0 +1,129 @@
+$date
+  Thu Sep 15 21:57:18 2022
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module exercise2_tb $end
+$var reg 1 ! inputtemp $end
+$var reg 1 " inputco $end
+$var reg 1 # inputmoisture $end
+$var reg 1 $ inputgl $end
+$var reg 1 % outputfix $end
+$var reg 1 & outputevac $end
+$scope module exercise2_0 $end
+$var reg 1 ' temp $end
+$var reg 1 ( co $end
+$var reg 1 ) moisture $end
+$var reg 1 * gl $end
+$var reg 1 + fix $end
+$var reg 1 , evac $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+0!
+0"
+0#
+0$
+0%
+0&
+0'
+0(
+0)
+0*
+0+
+0,
+#1000000
+1$
+1&
+1*
+1,
+#2000000
+1#
+0$
+0&
+1)
+0*
+0,
+#3000000
+1$
+1&
+1*
+1,
+#4000000
+1"
+0#
+0$
+1(
+0)
+0*
+#5000000
+1$
+1*
+#6000000
+1#
+0$
+1)
+0*
+#7000000
+1$
+1*
+#8000000
+1!
+0"
+0#
+0$
+0&
+1'
+0(
+0)
+0*
+0,
+#9000000
+1$
+1&
+1*
+1,
+#10000000
+1#
+0$
+1%
+0&
+1)
+0*
+1+
+0,
+#11000000
+1$
+1&
+1*
+1,
+#12000000
+1"
+0#
+0$
+0%
+1(
+0)
+0*
+0+
+#13000000
+1$
+1*
+#14000000
+1#
+0$
+1%
+1)
+0*
+1+
+#15000000
+1$
+1*
+#16000000

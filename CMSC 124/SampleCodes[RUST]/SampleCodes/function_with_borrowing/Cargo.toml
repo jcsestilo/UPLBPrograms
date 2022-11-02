@@ -1,0 +1,9 @@
+[package]
+name = "function_with_borrowing"
+version = "0.1.0"
+authors = ["erikacunanan"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]

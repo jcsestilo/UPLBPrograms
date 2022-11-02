@@ -1,0 +1,122 @@
+$date
+  Fri Sep 30 17:58:04 2022
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module mplus_tb $end
+$var reg 1 ! min $end
+$var reg 1 " pin $end
+$var reg 1 # gout $end
+$var reg 1 $ sout $end
+$var reg 1 % clk $end
+$scope module mp $end
+$var reg 1 & clk $end
+$var reg 1 ' min $end
+$var reg 1 ( pin $end
+$var reg 1 ) gout $end
+$var reg 1 * sout $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+0!
+X"
+U#
+U$
+1%
+1&
+0'
+X(
+U)
+U*
+#3000000
+#4650000
+0#
+0$
+0%
+0&
+0)
+0*
+#7650000
+#9300000
+X!
+0"
+X'
+0(
+#12180000
+1%
+1&
+#15180000
+1!
+X"
+1'
+X(
+#16830000
+1#
+1$
+0%
+0&
+1)
+1*
+#19830000
+#21480000
+X!
+0"
+X'
+0(
+#24360000
+1%
+1&
+#27360000
+#29010000
+0%
+0&
+#32010000
+0!
+X"
+0'
+X(
+#33660000
+X!
+1"
+X'
+1(
+#36540000
+1%
+1&
+#39540000
+#41190000
+0%
+0&
+#44190000
+#45840000
+#48720000
+1%
+1&
+#51720000
+0!
+X"
+0'
+X(
+#53370000
+0#
+0$
+0%
+0&
+0)
+0*
+#56370000
+#58020000
+X!
+1"
+X'
+1(
+#60900000

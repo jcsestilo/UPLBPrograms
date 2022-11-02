@@ -1,0 +1,13 @@
+v 4
+file . "xnor_nor_tb.vhdl" "b1886eeca5ee994622c8f0570e0c7a23f7e89b5d" "20220922131027.630":
+  entity xnor_nor_tb at 4( 44) + 0 on 31;
+  architecture behav of xnor_nor_tb at 7( 84) + 0 on 32;
+file . "xnor_nor.vhdl" "b4c398f5e7dcacaf5720911a016a4f74b0ec5853" "20220922124554.823":
+  entity xnor_nor at 4( 44) + 0 on 25;
+  architecture rtl of xnor_nor at 8( 133) + 0 on 26;
+file . "xnorgate_2in.vhdl" "dfcb9e36eaa626e3e47c9ff692f0d907ae8bf9e3" "20220922124515.008":
+  entity xnorgate_2in at 4( 44) + 0 on 21;
+  architecture rtl of xnorgate_2in at 8( 129) + 0 on 22;
+file . "norgate_2in.vhdl" "6fe5b111e5db879445d24ecbd56292236b3e03fd" "20220922124533.458":
+  entity norgate_2in at 4( 44) + 0 on 23;
+  architecture rtl of norgate_2in at 8( 126) + 0 on 24;

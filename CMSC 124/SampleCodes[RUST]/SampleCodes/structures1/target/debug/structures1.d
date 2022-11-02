@@ -1,0 +1,1 @@
+/mnt/c/Users/Erika\ Cunanan/Documents/Teaching\ Materials/CMSC\ 124/Rust/Sample\ Code/structures1/target/debug/structures1: /mnt/c/Users/Erika\ Cunanan/Documents/Teaching\ Materials/CMSC\ 124/Rust/Sample\ Code/structures1/src/main.rs

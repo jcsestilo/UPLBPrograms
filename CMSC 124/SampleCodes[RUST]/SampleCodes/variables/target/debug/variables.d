@@ -1,0 +1,1 @@
+/mnt/c/Users/Erika\ Cunanan/Documents/Teaching\ Materials/CMSC\ 124/Rust/Sample\ Code/variables/target/debug/variables: /mnt/c/Users/Erika\ Cunanan/Documents/Teaching\ Materials/CMSC\ 124/Rust/Sample\ Code/variables/src/main.rs
