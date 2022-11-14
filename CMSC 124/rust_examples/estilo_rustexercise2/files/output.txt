@@ -1,0 +1,17 @@
+Detected keyword: HEY CHRISTMAS TREE 
+Detected keyword: 
+IT'S SHOWTIME
+Detected keyword: 
+YOU SET US UP 
+Detected keyword: 
+GET TO THE CHOPPER 
+Detected keyword: 
+HERE IS MY INVITATION 
+Detected keyword: 
+GET UP 
+Detected keyword: 
+ENOUGH TALK
+Detected keyword: 
+TALK TO THE HAND 
+Detected keyword: ASDFGHJKL
+Count: 9
