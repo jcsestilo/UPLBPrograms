@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "602623561360",
+    "project_id": "project-jcsestilo",
+    "storage_bucket": "project-jcsestilo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:602623561360:android:b006f2f28be032308c1215",
+        "android_client_info": {
+          "package_name": "com.example.week7_networking_discussion"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "602623561360-gcqs0j6arkidtdfuftdjciedaom4c33e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrWZow6Zgc2sy5n9dFOwesWmK2johe2Po"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "602623561360-gcqs0j6arkidtdfuftdjciedaom4c33e.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "602623561360-v5m2ol8l7u5s0cr7nrg90j4h8c8n2det.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.week7NetworkingDiscussion"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
