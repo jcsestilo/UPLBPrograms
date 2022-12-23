@@ -10,7 +10,8 @@ from tkinter import messagebox
 PlayerUser = 'X'
 PlayerAI = 'O'
 stop_game = False
-NEG_INF = -99999
+NEG_INF = float('-inf')
+POS_INF = float('inf')
 
 player = messagebox.askquestion("Tic Tac Toe", "Should the user go first?\nYes - User (X)\nNo - AI (O)")
 
@@ -45,12 +46,52 @@ def actions(s,p): # provides the set of possible actions/moves for a player.
 
 def terminal(): # It returns true when the state is terminal or there is an end result or false otherwise.
      print("terminal function")
+     if(stop_game):
+          return True
+     else:
+          return False
 
 def utility(s,p): # Returns the current value of the state s to a player p
      # It is expresses the value of the current game state to
      # the player. It is usually expressed as +/- numbers or
      # 0's or 1's
      print("utility function")
+
+def check_if_win():
+    global stop_game
+    # count = 0
+ 
+    for i in range(3):
+        if states[i][0] == states[i][1] == states[i][2] !=0:
+          stop_game = True
+
+          # winner = messagebox.showinfo("Winner", states[i][0] + " Won")
+          # disableAllButton()
+          break
+ 
+    # for j in range(3):
+        elif states [0][i] == states[1][i] == states[2][i] != 0:
+          stop_game = True
+
+          # winner = messagebox.showinfo("Winner", states[0][i]+ " Won!")
+          break
+ 
+        elif states[0][0] == states[1][1] == states[2][2] !=0:
+          stop_game = True
+
+          # winner = messagebox.showinfo("Winner", states[0][0]+ " Won!")
+          break
+ 
+        elif states[0][2] == states[1][1] == states[2][0] !=0:
+          stop_game = True
+
+          # winner = messagebox.showinfo("Winner" , states[0][2]+ " Won!")
+          break
+ 
+        elif states[0][0] and states[0][1] and states[0][2] and states[1][0] and states[1][1] and states[1][2] and states[2][0] and states[2][1] and states[2][2] != 0:
+          stop_game = True
+
+          # winner = messagebox.showinfo("tie", "Tie")
  
 for i in range(3):
     for j in range(3):
