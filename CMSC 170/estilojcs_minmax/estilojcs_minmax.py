@@ -10,6 +10,7 @@ from tkinter import messagebox
 PlayerUser = 'X'
 PlayerAI = 'O'
 stop_game = False
+winner = ""
 NEG_INF = float('-inf')
 POS_INF = float('inf')
 
@@ -59,39 +60,34 @@ def utility(s,p): # Returns the current value of the state s to a player p
 
 def check_if_win():
     global stop_game
-    # count = 0
+    global winner
  
     for i in range(3):
         if states[i][0] == states[i][1] == states[i][2] !=0:
           stop_game = True
-
-          # winner = messagebox.showinfo("Winner", states[i][0] + " Won")
+          winner = str(states[i][0])
           # disableAllButton()
           break
  
     # for j in range(3):
         elif states [0][i] == states[1][i] == states[2][i] != 0:
           stop_game = True
-
-          # winner = messagebox.showinfo("Winner", states[0][i]+ " Won!")
+          winner = str(states[0][i])
           break
  
         elif states[0][0] == states[1][1] == states[2][2] !=0:
           stop_game = True
-
-          # winner = messagebox.showinfo("Winner", states[0][0]+ " Won!")
+          winner = str(states[0][0])
           break
  
         elif states[0][2] == states[1][1] == states[2][0] !=0:
           stop_game = True
-
-          # winner = messagebox.showinfo("Winner" , states[0][2]+ " Won!")
+          winner = str(states[0][2])
           break
  
         elif states[0][0] and states[0][1] and states[0][2] and states[1][0] and states[1][1] and states[1][2] and states[2][0] and states[2][1] and states[2][2] != 0:
           stop_game = True
-
-          # winner = messagebox.showinfo("tie", "Tie")
+          winner = "draw"
  
 for i in range(3):
     for j in range(3):
