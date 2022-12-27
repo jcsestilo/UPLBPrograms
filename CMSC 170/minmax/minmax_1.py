@@ -252,3 +252,74 @@ def main():
      mainloop()        
 
 main()
+
+# This is the minimax function. It considers all
+# the possible ways the game can go and returns
+# the value of the board
+
+def minimax(board, depth, isMax) :
+     # TERMINAL
+    score = evaluate(board)
+     
+     # UTILITY -----
+    # If Maximizer has won the game return his/her
+    # evaluated score
+    if (score == 10) :
+        return score
+ 
+    # If Minimizer has won the game return his/her
+    # evaluated score
+    if (score == -10) :
+        return score
+ 
+    # If there are no more moves and no winner then
+    # it is a tie
+    if (isMovesLeft(board) == False) :
+        return 0
+     # UTILITY ----
+     
+    # If this maximizer's move
+    if (isMax) :    
+        best = -1000
+ 
+        # Traverse all cells
+        for i in range(3) :        
+            for j in range(3) :
+              
+                # Check if cell is empty
+                if (board[i][j]=='_') :
+                 
+                    # Make the move
+                    board[i][j] = player
+ 
+                    # Call minimax recursively and choose
+                    # the maximum value
+                    best = max( best, minimax(board,
+                                              depth + 1,
+                                              not isMax) )
+ 
+                    # Undo the move
+                    board[i][j] = '_'
+        return best
+ 
+    # If this minimizer's move
+    else :
+        best = 1000
+ 
+        # Traverse all cells
+        for i in range(3) :        
+            for j in range(3) :
+              
+                # Check if cell is empty
+                if (board[i][j] == '_') :
+                 
+                    # Make the move
+                    board[i][j] = opponent
+ 
+                    # Call minimax recursively and choose
+                    # the minimum value
+                    best = min(best, minimax(board, depth + 1, not isMax))
+ 
+                    # Undo the move
+                    board[i][j] = '_'
+        return best

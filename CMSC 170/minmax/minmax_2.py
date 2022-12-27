@@ -23,7 +23,7 @@ if(player=="yes"):
     player = PlayerUser
 elif(player=="no"):
     player = PlayerAI
-
+    # findBestMove(states)
 
 # Design window
 #Creating the Canvas
@@ -119,11 +119,124 @@ def clicked(r,c):
         print("draw!")
     else:
         changePlayer()
+        findBestMove(states)
     # print(player)
     # print(b)
     # print(states)
 
+# def utility(winner):
 
+def terminal(board):
+    winner = checkIfWin(board)
+    if(winner == PlayerUser):
+        print(10)
+        return +1, True
+    if(winner == PlayerAI):
+        print(-10)
+        return -1, True
+    if(winner == "draw"):
+        print(0)
+        return 0, True
+    else:
+        return None, False
+
+def minimax(board, depth, isMax, alpha, beta):
+    # print("minimax function")
+
+    val, isTerminal = terminal(board)
+    # print(val, isTerminal)
+    if(isTerminal):
+        return val
+    if isMax:
+        best = NEG_INF
+
+        for i in range(3):
+            for j in range(3):
+                # Check if cell is empty
+                if (board[i][j]=='_') :
+                 
+                    # Make the move
+                    board[i][j] = player
+ 
+                    # Call minimax recursively and choose
+                    # the maximum value
+                    v = minimax(board, depth + 1, not isMax, alpha, beta)
+                    best = max( best, v )
+ 
+                    # Undo the move
+                    board[i][j] = '_'
+
+                    if v >= beta:
+                        return best
+                    alpha = max(alpha, best)
+        return best
+    else:
+        best = POS_INF
+ 
+        # Traverse all cells
+        for i in range(3) :        
+            for j in range(3) :
+              
+                # Check if cell is empty
+                if (board[i][j] == '_') :
+                 
+                    # Make the move
+                    board[i][j] = player
+ 
+                    # Call minimax recursively and choose
+                    # the minimum value
+                    v = minimax(board, depth + 1, not isMax, alpha, beta)
+                    best = min(best, v)
+
+                    # Undo the move
+                    board[i][j] = '_'
+
+                    if v <= alpha:
+                        return best
+                    beta = min(beta, best)
+ 
+        return best
+
+
+# This will return the best possible move for the player
+def findBestMove(b):
+    print("findBestMove function")
+    # print(board)
+    # global player
+    global board
+    global states
+    bestVal = -1000
+    bestMove = (-1, -1)
+    for i in range(3):    
+        for j in range(3):
+            # Check if cell is empty
+            if (b[i][j] == '_'):
+            
+                # Make the move
+                b[i][j] = player
+
+                # compute evaluation function for this
+                # move.
+                moveVal = minimax(b, 0, False, NEG_INF, POS_INF)
+
+                # Undo the move
+                b[i][j] = '_'
+
+                # If the value of the current move is
+                # more than the best value, then update
+                # best/
+                print("moveVal", moveVal)
+                if (moveVal > bestVal):               
+                        bestMove = (i, j)
+                        # states[i][j] = player
+                        bestVal = moveVal
+    print("The value of the best Move is :", bestVal)
+    print("The best Move is :", bestMove)
+    board[bestMove[0]][bestMove[1]].configure(text="O")
+    states[bestMove[0]][bestMove[1]] = player
+    print(states)
+    changePlayer()
+    return bestMove
 
 for i in range(3):
     for j in range(3):
