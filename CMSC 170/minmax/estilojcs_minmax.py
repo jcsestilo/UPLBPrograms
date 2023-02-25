@@ -4,8 +4,8 @@
 # References:
 # https://www.geeksforgeeks.org/tic-tac-toe-game-with-gui-using-tkinter-in-python/
 # https://www.youtube.com/watch?v=l-hh51ncgDI
-# https://www.geeksforgeeks.org/minimax-algorithm-in-game-theory-set-3-tic-tac-toe-ai-finding-optimal-move/
-# https://levelup.gitconnected.com/mastering-tic-tac-toe-with-minimax-algorithm-3394d65fa88f
+# https://www.geeksforgeeks.org/minmax-algorithm-in-game-theory-set-3-tic-tac-toe-ai-finding-optimal-move/
+# https://levelup.gitconnected.com/mastering-tic-tac-toe-with-minmax-algorithm-3394d65fa88f
 
 from tkinter import *
 from tkinter import messagebox
@@ -18,21 +18,6 @@ NEG_INF = -1000
 POS_INF = 1000
 
 player = messagebox.askquestion("Tic Tac Toe", "Should the user go first?\nYes - User (X)\nNo - AI (O)")
-
-if(player=="yes"):
-    player = PlayerUser
-elif(player=="no"):
-    player = PlayerAI
-    # findBestMove(states)
-
-# Design window
-#Creating the Canvas
-root = Tk()
-# Title of the window            
-root.title("Tic Tac Toe") 
-# Attributes
-root.resizable(0,0)
-root.attributes('-topmost',True)
 
 #Button
 board = [
@@ -98,19 +83,12 @@ def clicked(r,c):
     if player == "X" and states[r][c] == '_' and stop_game == False:
         board[r][c].configure(text = "X")
         states[r][c] = 'X'
-        # player=PlayerAI
-        # check_if_win()
-        #   if not stop_game:
-        #        bestMove = findBestMove(states)
-        #        states[bestMove[0]][bestMove[1]] = "O"
 
-    elif player == 'O' and states[r][c] == '_' and stop_game == False:
-        board[r][c].configure(text = 'O')
-        states[r][c] = "O"
-        # player = PlayerUser
+    # elif player == 'O' and states[r][c] == '_' and stop_game == False:
+    #     board[r][c].configure(text = 'O')
+    #     states[r][c] = "O"
     
     winner = checkIfWin(states)
-    # print(winner)
     if(winner==PlayerUser):
         print("player user won")
     elif(winner==PlayerAI):
@@ -129,26 +107,26 @@ def clicked(r,c):
 def terminal(board):
     winner = checkIfWin(board)
     if(winner == PlayerUser):
-        print(10)
-        return +1, True
+        # print(10)
+        return 1, True
     if(winner == PlayerAI):
-        print(-10)
+        # print(-10)
         return -1, True
     if(winner == "draw"):
-        print(0)
+        # print(0)
         return 0, True
     else:
         return None, False
 
-def minimax(board, depth, isMax, alpha, beta):
-    # print("minimax function")
+def minmax(board, isMax):
+    # print("minmax function")
 
     val, isTerminal = terminal(board)
     # print(val, isTerminal)
     if(isTerminal):
         return val
     if isMax:
-        best = NEG_INF
+        best = float('-inf')
 
         for i in range(3):
             for j in range(3):
@@ -156,46 +134,47 @@ def minimax(board, depth, isMax, alpha, beta):
                 if (board[i][j]=='_') :
                  
                     # Make the move
-                    board[i][j] = player
+                    board[i][j] = PlayerUser
  
-                    # Call minimax recursively and choose
+                    # Call minmax recursively and choose
                     # the maximum value
-                    v = minimax(board, depth + 1, not isMax, alpha, beta)
+                    # v = minmax(board, not isMax, alpha, beta)
+                    v = minmax(board, not isMax)
                     best = max( best, v )
  
                     # Undo the move
                     board[i][j] = '_'
 
-                    if v >= beta:
-                        return best
-                    alpha = max(alpha, best)
-        return best
+                    # if v >= beta:
+                    #     return best
+                    # alpha = max(alpha, best)
+        # return best
     else:
-        best = POS_INF
+        best = float('inf')
  
         # Traverse all cells
-        for i in range(3) :        
+        for i in range(3) :
             for j in range(3) :
               
                 # Check if cell is empty
                 if (board[i][j] == '_') :
                  
                     # Make the move
-                    board[i][j] = player
+                    board[i][j] = PlayerAI
  
-                    # Call minimax recursively and choose
+                    # Call minmax recursively and choose
                     # the minimum value
-                    v = minimax(board, depth + 1, not isMax, alpha, beta)
+                    # v = minmax(board, not isMax, alpha, beta)
+                    v = minmax(board, not isMax)
                     best = min(best, v)
 
                     # Undo the move
                     board[i][j] = '_'
 
-                    if v <= alpha:
-                        return best
-                    beta = min(beta, best)
- 
-        return best
+                    # if v <= alpha:
+                    #     return best
+                    # beta = min(beta, best)
+    return best
 
 
 # This will return the best possible move for the player
@@ -217,26 +196,46 @@ def findBestMove(b):
 
                 # compute evaluation function for this
                 # move.
-                moveVal = minimax(b, 0, False, NEG_INF, POS_INF)
+                # moveVal = minmax(b, False, NEG_INF, POS_INF)
+                moveVal = minmax(b, False)
 
                 # Undo the move
                 b[i][j] = '_'
 
-                # If the value of the current move is
-                # more than the best value, then update
-                # best/
+                # If the value of the current move is more than the best value, then update best
                 print("moveVal", moveVal)
                 if (moveVal > bestVal):               
-                        bestMove = (i, j)
-                        # states[i][j] = player
-                        bestVal = moveVal
+                    bestMove = (i, j)
+                    # states[i][j] = player
+                    bestVal = moveVal
     print("The value of the best Move is :", bestVal)
     print("The best Move is :", bestMove)
     board[bestMove[0]][bestMove[1]].configure(text="O")
     states[bestMove[0]][bestMove[1]] = player
     print(states)
     changePlayer()
-    return bestMove
+    # return bestMove
+
+def aiFirstMove():
+    global player, board, states
+    player = PlayerAI
+    states[0][0] = 'O'
+
+# Design window
+#Creating the Canvas
+root = Tk()
+# Title of the window            
+root.title("Tic Tac Toe") 
+# Attributes
+root.resizable(0,0)
+root.attributes('-topmost',True)
+
+if(player=="yes"):
+    player = PlayerUser
+elif(player=="no"):
+    player = PlayerAI
+    aiFirstMove()
+    # findBestMove(states)
 
 for i in range(3):
     for j in range(3):
@@ -246,6 +245,9 @@ for i in range(3):
                         font = ("Helvetica","20"),
                         command = lambda r = i, c = j : clicked(r,c))
         board[i][j].grid(row = i, column = j)
+if(player==PlayerAI):
+    board[0][0].configure(text='O')
+    changePlayer()
  
  
 mainloop()

@@ -61,19 +61,16 @@ def minimax(board, depth, isMax) :
 	# If Maximizer has won the game return his/her
 	# evaluated score
 	if (score == 10) :
-		print(score)
 		return score
 
 	# If Minimizer has won the game return his/her
 	# evaluated score
 	if (score == -10) :
-		print(score)
 		return score
 
 	# If there are no more moves and no winner then
 	# it is a tie
 	if (isMovesLeft(board) == False) :
-		print(0)
 		return 0
 
 	# If this maximizer's move
@@ -88,7 +85,7 @@ def minimax(board, depth, isMax) :
 				if (board[i][j]=='_') :
 				
 					# Make the move
-					board[i][j] = opponent
+					board[i][j] = player
 
 					# Call minimax recursively and choose
 					# the maximum value
@@ -158,18 +155,14 @@ def findBestMove(board) :
 	return bestMove
 # Driver code
 board = [
-    [ 'x', 'o', '_' ],
-    [ 'x', '_', '_' ],
-    [ '_', '_', '_' ]
+	[ 'x', 'o', 'x' ],
+	[ 'o', 'o', 'x' ],
+	[ '_', '_', '_' ]
 ]
 
 bestMove = findBestMove(board)
 
 print("The Optimal Move is :")
 print("ROW:", bestMove[0], " COL:", bestMove[1])
-
-# change the board
-board[bestMove[0]][bestMove[1]] = opponent
-print(board)
 
 # This code is contributed by divyesh072019
