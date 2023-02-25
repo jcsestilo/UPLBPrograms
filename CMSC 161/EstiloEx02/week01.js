@@ -84,7 +84,8 @@ let dog = [
 
 for(let i=0; i<dog.length; i++){
     gl.vertexAttrib4f(aPositionPointer, dog[i][0], dog[i][1], 0.0, 1.0); // x=0, y=0, z=0, w=1
-    gl.vertexAttrib1f(aPointSizePointer, 10.0);
+    gl.vertexAttrib1f(aPointSizePointer, (Math.random()*20)+1);
+    // gl.vertexAttrib1f(aPointColorPointer);
     gl.drawArrays(gl.POINTS, 0, 1);
 }
 
@@ -253,6 +254,6 @@ let myXYArrays = [
 
 for(let i=0; i<myXYArrays.length; i++){
     gl.vertexAttrib4f(aPositionPointer, myXYArrays[i][0], myXYArrays[i][1], 0.0, 1.0); // x=0, y=0, z=0, w=1
-    gl.vertexAttrib1f(aPointSizePointer, 10.0);
+    gl.vertexAttrib1f(aPointSizePointer, (Math.random()*20)+1);
     gl.drawArrays(gl.POINTS, 0, 1);
 }
