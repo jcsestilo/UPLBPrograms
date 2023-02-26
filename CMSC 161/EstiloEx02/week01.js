@@ -1,3 +1,8 @@
+// Jan Coleen S. Estilo
+// Exercise 02
+// Reference:
+// https://dens.website/tutorials/webgl/varyings
+
 const canvas = document.querySelector("#output");
 const gl = canvas.getContext("webgl2");
 
@@ -32,6 +37,7 @@ gl.useProgram(program);
 // Declaration of pointers to the attributes
 const aPositionPointer = gl.getAttribLocation(program, 'a_position');
 const aPointSizePointer = gl.getAttribLocation(program, 'a_point_size');
+const aColor = gl.getAttribLocation(program, 'color'); // get the attribute for the color
 
 let dog = [
     [-0.60, 0.90], // D
@@ -83,9 +89,9 @@ let dog = [
 ]
 
 for(let i=0; i<dog.length; i++){
-    gl.vertexAttrib4f(aPositionPointer, dog[i][0], dog[i][1], 0.0, 1.0); // x=0, y=0, z=0, w=1
+    gl.vertexAttrib4f(aPositionPointer, dog[i][0], dog[i][1], 0.0, 1.0);
     gl.vertexAttrib1f(aPointSizePointer, (Math.random()*20)+1);
-    // gl.vertexAttrib1f(aPointColorPointer);
+    gl.vertexAttrib3f(aColor, Math.random(), Math.random(), Math.random()); // Randomize the 3 elements vector 'color'
     gl.drawArrays(gl.POINTS, 0, 1);
 }
 
@@ -255,5 +261,6 @@ let myXYArrays = [
 for(let i=0; i<myXYArrays.length; i++){
     gl.vertexAttrib4f(aPositionPointer, myXYArrays[i][0], myXYArrays[i][1], 0.0, 1.0); // x=0, y=0, z=0, w=1
     gl.vertexAttrib1f(aPointSizePointer, (Math.random()*20)+1);
+    gl.vertexAttrib3f(aColor, Math.random(), Math.random(), Math.random());
     gl.drawArrays(gl.POINTS, 0, 1);
 }
