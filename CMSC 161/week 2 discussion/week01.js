@@ -40,8 +40,10 @@ const aPointSizePointer = gl.getAttribLocation(program, 'a_point_size');
 const vertexData = new Float32Array([
     -0.5, 0.5, 0.0, 1.0, // v1 
     1.0, 0.0, 0.0, 1.0, // c1
+
     0.5, 0.5, 0.0, 1.0, // v2
     0.0, 1.0, 0.0, 1.0, // c2
+    
     0.0, -0.5, 0.0, 1.0, // v3
     0.0, 0.0, 1.0, 1.0, // c3
 ]); // create array
