@@ -126,14 +126,14 @@ Exercise 04 - CMSC 161 -->
       const modelMatrix = glMatrix.mat4.create();
       // setup view matrix
       const viewMatrix = glMatrix.mat4.create();
-      glMatrix.mat4.lookAt(viewMatrix, [0.0, 0.0, -1.0, 1.0], [0.0, 0.0, 0.0, 1.0], [0.0, 1.0, 0.0, 1.0]);
+      glMatrix.mat4.lookAt(viewMatrix, [0.3, 0.3, -1.5, 1.0], [0.0, 0.0, 0.0, 1.0], [0.0, 10.0, 0.0, 1.0]);
 
       // setup projection matrix
       const projectionMatrix = glMatrix.mat4.create();
-      var left = -1;
-      var right = 1;
-      var bottom = -1;
-      var top = 1;
+      var left = -10;
+      var right = 10;
+      var bottom = -10;
+      var top = 10;
       var near = 1;
       var far = 10;
       glMatrix.mat4.ortho(projectionMatrix, left, right, bottom, top, near, far);
@@ -154,8 +154,8 @@ Exercise 04 - CMSC 161 -->
         1.0, 1.0, 1.0, 1.0,
         Math.random(), Math.random(), Math.random(), 1.0,
         -1.0, -1.0, 1.0, 1.0,
-        Math.random(), Math.random(), Math.random(), 1.0,// Front Face - Lower
-        
+        Math.random(), Math.random(), Math.random(), 1.0,
+        // Front Face - Lower
         1.0, 1.0, 1.0, 1.0,
         Math.random(), Math.random(), Math.random(), 1.0,
         1.0, -1.0, 1.0, 1.0,        
@@ -184,8 +184,8 @@ Exercise 04 - CMSC 161 -->
         1.0, 1.0, -1.0, 1.0,
         Math.random(), Math.random(), Math.random(), 1.0,
         -1.0, -1.0, -1.0, 1.0,
-        Math.random(), Math.random(), Math.random(), 1.0,// Back Face - Lower
-        
+        Math.random(), Math.random(), Math.random(), 1.0,
+        // Back Face - Lower
         1.0, 1.0, -1.0, 1.0,
         Math.random(), Math.random(), Math.random(), 1.0,
         1.0, -1.0, -1.0, 1.0,
@@ -199,8 +199,8 @@ Exercise 04 - CMSC 161 -->
         1.0, -1.0, -1.0, 1.0,
         Math.random(), Math.random(), Math.random(), 1.0,
         -1.0, -1.0, 1.0, 1.0,
-        Math.random(), Math.random(), Math.random(), 1.0,// Bottom Face – Lower
-        
+        Math.random(), Math.random(), Math.random(), 1.0,
+        // Bottom Face – Lower
         1.0, -1.0, -1.0, 1.0,
         Math.random(), Math.random(), Math.random(), 1.0,
         1.0, -1.0, 1.0, 1.0,
@@ -214,8 +214,8 @@ Exercise 04 - CMSC 161 -->
         -1.0, 1.0, 1.0, 1.0,
         Math.random(), Math.random(), Math.random(), 1.0,
         -1.0, -1.0, 1.0, 1.0,
-        Math.random(), Math.random(), Math.random(), 1.0,// Left Face - Lower
-        
+        Math.random(), Math.random(), Math.random(), 1.0,
+        // Left Face - Lower
         -1.0, 1.0, -1.0, 1.0,
         Math.random(), Math.random(), Math.random(), 1.0,
         -1.0, -1.0, 1.0, 1.0,
@@ -229,8 +229,8 @@ Exercise 04 - CMSC 161 -->
         1.0, 1.0, 1.0, 1.0,
         Math.random(), Math.random(), Math.random(), 1.0,
         1.0, -1.0, 1.0, 1.0,
-        Math.random(), Math.random(), Math.random(), 1.0,// Right Face - Lower
-        
+        Math.random(), Math.random(), Math.random(), 1.0,
+        // Right Face - Lower
         1.0, 1.0, -1.0, 1.0,
         Math.random(), Math.random(), Math.random(), 1.0,
         1.0, -1.0, 1.0, 1.0,
@@ -283,7 +283,7 @@ Exercise 04 - CMSC 161 -->
 
          // draw buffer that is bound to gl.ARRAY_BUFFER
         // gl.uniform4f(colorLocation, Math.random(), Math.random(), Math.random(),1.0);
-        gl.drawArrays(gl.TRIANGLES, 0, 4*12); 
+        gl.drawArrays(gl.TRIANGLES, 0, 3*12); 
       }
 
       // initial render
