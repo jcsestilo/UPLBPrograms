@@ -26,7 +26,7 @@ int main()
 
 	// Create 5 PHILOSOPHER
 	pthread_t philo[N];
-  int *ids = (int *) malloc(sizeof(int) * N);
+  	int *ids = (int *) malloc(sizeof(int) * N);
 
 	// Initialize Semaphores
 	for(i=0; i<N; i++){
