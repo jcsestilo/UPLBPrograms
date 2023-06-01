@@ -16,12 +16,36 @@ Exercise 04 - CMSC 161 -->
  <button id="translate">MOVE</button>
  <button id="scale">SCALE</button>
  <button id="rotate">ROTATE</button>
+ <button id="project">PROJECTION</button>
+ <button id="frustum">FRUSTUM</button>
  <br>
  X = <input type="text" id="tx" value="0">
- Y = <input type="text" id="ty" value="0">
+ Y = <input type="text" id="ty" value="0"><br>
+
  SCALE X by = <input type="text" id="Sx" value="0">
  SCALE Y by = <input type="text" id="Sy" value="0">
- ROTATE BY (DEGREES) = <input type="text" id="degrees" value="0">
+ SCALE Z by = <input type="text" id="Sz" value="0"><br>
+
+ ROTATE BY (DEGREES) = <input type="text" id="degrees" value="0"><br>
+
+ VIEWPOINT = <input type="text" id="vpoint-1" value="0">
+ <input type="text" id="vpoint-2" value="0">
+ <input type="text" id="vpoint-3" value="0">
+ <input type="text" id="vpoint-4" value="0"><br>
+
+ EYEPOINT = <input type="text" id="eyepoint-1" value="0">
+ <input type="text" id="eyepoint-2" value="0">
+ <input type="text" id="eyepoint-3" value="0">
+ <input type="text" id="eyepoint-4" value="0"><br>
+
+ UP VECTORS = <input type="text" id="up-1" value="0">
+ <input type="text" id="up-2" value="0">
+ <input type="text" id="up-3" value="0">
+ <input type="text" id="up-4" value="0"><br>
+
+ FRUSTUM (Field Of View DEGREES) = <input type="text" id="frustum-fov" value="0">
+ FRUSTUM (Near) = <input type="text" id="frustum-near" value="0">
+ FRUSTUM (Far) = <input type="text" id="frustum-far" value="0">
   
   <!-- VERTEX SHADER -->
   <script id="vertex-shader" type="notjs">#version 300 es
@@ -40,7 +64,7 @@ Exercise 04 - CMSC 161 -->
 
     void main() {
       //Input point passes through the transformation matrix
-      gl_Position = u_transformation_matrix * u_view_matrix * u_model_matrix * u_projection_matrix * a_position;
+      gl_Position = u_transformation_matrix * u_projection_matrix * u_view_matrix * u_model_matrix * a_position;
       gl_PointSize = a_point_size;
       a_color = in_color;
     } 
@@ -126,17 +150,24 @@ Exercise 04 - CMSC 161 -->
       const modelMatrix = glMatrix.mat4.create();
       // setup view matrix
       const viewMatrix = glMatrix.mat4.create();
-      glMatrix.mat4.lookAt(viewMatrix, [0.3, 0.3, -1.5, 1.0], [0.0, 0.0, 0.0, 1.0], [0.0, 10.0, 0.0, 1.0]);
+      glMatrix.mat4.lookAt(viewMatrix, [0.0, 1.0, 5.0, 1.0], [0.0, 0.0, 0.0, 1.0], [0.0, 1.0, 0.0, 1.0]);
 
       // setup projection matrix
       const projectionMatrix = glMatrix.mat4.create();
-      var left = -10;
-      var right = 10;
-      var bottom = -10;
-      var top = 10;
-      var near = 1;
-      var far = 10;
-      glMatrix.mat4.ortho(projectionMatrix, left, right, bottom, top, near, far);
+
+      // var left = -100;
+      // var right = 100;
+      // var bottom = -100;
+      // var top = 100;
+      // var near = 0.1;
+      // var far = 100;
+      // glMatrix.mat4.ortho(projectionMatrix, left, right, bottom, top, near, far);
+
+      var fieldOfView = 45 * Math.PI / 180; // in radians
+      var aspectRatio = gl.canvas.clientWidth / gl.canvas.clientHeight;
+      var near = 0.1;
+      var far = 100;
+      glMatrix.mat4.perspective(projectionMatrix, fieldOfView, aspectRatio, near, far);
      
      //Used for affine transformation
      const uTransformationMatrixPointer = gl.getUniformLocation(program, 'u_transformation_matrix');
@@ -146,97 +177,96 @@ Exercise 04 - CMSC 161 -->
 
 
      const vertices = [
-        // Cube
-        // Front Face - Upper
-        
-        -1.0, 1.0, 1.0, 1.0,
-        Math.random(), Math.random(), Math.random(), 1.0,
-        1.0, 1.0, 1.0, 1.0,
-        Math.random(), Math.random(), Math.random(), 1.0,
-        -1.0, -1.0, 1.0, 1.0,
-        Math.random(), Math.random(), Math.random(), 1.0,
-        // Front Face - Lower
-        1.0, 1.0, 1.0, 1.0,
-        Math.random(), Math.random(), Math.random(), 1.0,
-        1.0, -1.0, 1.0, 1.0,        
-        Math.random(), Math.random(), Math.random(), 1.0,
-        -1.0, -1.0, 1.0, 1.0,
-        Math.random(), Math.random(), Math.random(), 1.0,
-        // Top Face – Upper
-        
-        -1.0, 1.0, -1.0, 1.0,
-        Math.random(), Math.random(), Math.random(), 1.0,
-        1.0, 1.0, -1.0, 1.0,
-        Math.random(), Math.random(), Math.random(), 1.0,
-        -1.0, 1.0, 1.0, 1.0,
-        Math.random(), Math.random(), Math.random(), 1.0,
-        // Top Face – Lower
-        1.0, 1.0, -1.0, 1.0,
-        Math.random(), Math.random(), Math.random(), 1.0,
-        1.0, 1.0, 1.0, 1.0,
-        Math.random(), Math.random(), Math.random(), 1.0,
-        -1.0, 1.0, 1.0, 1.0,
-        Math.random(), Math.random(), Math.random(), 1.0,
-        // Back Face - Upper
-        
-        -1.0, 1.0, -1.0, 1.0,
-        Math.random(), Math.random(), Math.random(), 1.0,
-        1.0, 1.0, -1.0, 1.0,
-        Math.random(), Math.random(), Math.random(), 1.0,
-        -1.0, -1.0, -1.0, 1.0,
-        Math.random(), Math.random(), Math.random(), 1.0,
-        // Back Face - Lower
-        1.0, 1.0, -1.0, 1.0,
-        Math.random(), Math.random(), Math.random(), 1.0,
-        1.0, -1.0, -1.0, 1.0,
-        Math.random(), Math.random(), Math.random(), 1.0,
-        -1.0, -1.0, -1.0, 1.0,
-        Math.random(), Math.random(), Math.random(), 1.0,
-        // Bottom Face – Upper
-        
-        -1.0, -1.0, -1.0, 1.0,
-        Math.random(), Math.random(), Math.random(), 1.0,
-        1.0, -1.0, -1.0, 1.0,
-        Math.random(), Math.random(), Math.random(), 1.0,
-        -1.0, -1.0, 1.0, 1.0,
-        Math.random(), Math.random(), Math.random(), 1.0,
-        // Bottom Face – Lower
-        1.0, -1.0, -1.0, 1.0,
-        Math.random(), Math.random(), Math.random(), 1.0,
-        1.0, -1.0, 1.0, 1.0,
-        Math.random(), Math.random(), Math.random(), 1.0,
-        -1.0, -1.0, 1.0, 1.0,
-        Math.random(), Math.random(), Math.random(), 1.0,
-        // Left Face - Upper
-        
-        -1.0, 1.0, -1.0, 1.0,
-        Math.random(), Math.random(), Math.random(), 1.0,
-        -1.0, 1.0, 1.0, 1.0,
-        Math.random(), Math.random(), Math.random(), 1.0,
-        -1.0, -1.0, 1.0, 1.0,
-        Math.random(), Math.random(), Math.random(), 1.0,
-        // Left Face - Lower
-        -1.0, 1.0, -1.0, 1.0,
-        Math.random(), Math.random(), Math.random(), 1.0,
-        -1.0, -1.0, 1.0, 1.0,
-        Math.random(), Math.random(), Math.random(), 1.0,
-        -1.0, -1.0, -1.0, 1.0,
-        Math.random(), Math.random(), Math.random(), 1.0,
-        // Right Face - Upper
-        
-        1.0, 1.0, -1.0, 1.0,
-        Math.random(), Math.random(), Math.random(), 1.0,
-        1.0, 1.0, 1.0, 1.0,
-        Math.random(), Math.random(), Math.random(), 1.0,
-        1.0, -1.0, 1.0, 1.0,
-        Math.random(), Math.random(), Math.random(), 1.0,
-        // Right Face - Lower
-        1.0, 1.0, -1.0, 1.0,
-        Math.random(), Math.random(), Math.random(), 1.0,
-        1.0, -1.0, 1.0, 1.0,
-        Math.random(), Math.random(), Math.random(), 1.0,
-        1.0, -1.0, -1.0, 1.0,
-        Math.random(), Math.random(), Math.random(), 1.0,
+      // Cube
+      // Front Face - Upper
+      -1.0, 1.0, 1.0, 1.0,
+      Math.random(), Math.random(), Math.random(), 1.0,
+      1.0, 1.0, 1.0, 1.0,
+      Math.random(), Math.random(), Math.random(), 1.0,
+      -1.0, -1.0, 1.0, 1.0,
+      Math.random(), Math.random(), Math.random(), 1.0,
+      // Front Face - Lower
+      1.0, 1.0, 1.0, 1.0,
+      Math.random(), Math.random(), Math.random(), 1.0,
+      1.0, -1.0, 1.0, 1.0,
+      Math.random(), Math.random(), Math.random(), 1.0,
+      -1.0, -1.0, 1.0, 1.0,
+      Math.random(), Math.random(), Math.random(), 1.0,
+
+      // Top Face – Upper
+      -1.0, 1.0, -1.0, 1.0,
+      Math.random(), Math.random(), Math.random(), 1.0,
+      1.0, 1.0, -1.0, 1.0,
+      Math.random(), Math.random(), Math.random(), 1.0,
+      -1.0, 1.0, 1.0, 1.0,
+      Math.random(), Math.random(), Math.random(), 1.0,
+      // Top Face – Lower
+      1.0, 1.0, -1.0, 1.0,
+      Math.random(), Math.random(), Math.random(), 1.0,
+      1.0, 1.0, 1.0, 1.0,
+      Math.random(), Math.random(), Math.random(), 1.0,
+      -1.0, 1.0, 1.0, 1.0,
+      Math.random(), Math.random(), Math.random(), 1.0,
+
+      // Back Face - Upper
+      -1.0, 1.0, -1.0, 1.0,
+      Math.random(), Math.random(), Math.random(), 1.0,
+      1.0, 1.0, -1.0, 1.0,
+      Math.random(), Math.random(), Math.random(), 1.0,
+      -1.0, -1.0, -1.0, 1.0,
+      Math.random(), Math.random(), Math.random(), 1.0,
+      // Back Face - Lower
+      1.0, 1.0, -1.0, 1.0,
+      Math.random(), Math.random(), Math.random(), 1.0,
+      1.0, -1.0, -1.0, 1.0,
+      Math.random(), Math.random(), Math.random(), 1.0,
+      -1.0, -1.0, -1.0, 1.0,
+      Math.random(), Math.random(), Math.random(), 1.0,
+
+      // Bottom Face – Upper
+      -1.0, -1.0, -1.0, 1.0,
+      Math.random(), Math.random(), Math.random(), 1.0,
+      1.0, -1.0, -1.0, 1.0,
+      Math.random(), Math.random(), Math.random(), 1.0,
+      -1.0, -1.0, 1.0, 1.0,
+      Math.random(), Math.random(), Math.random(), 1.0,
+      // Bottom Face – Lower
+      1.0, -1.0, -1.0, 1.0,
+      Math.random(), Math.random(), Math.random(), 1.0,
+      1.0, -1.0, 1.0, 1.0,
+      Math.random(), Math.random(), Math.random(), 1.0,
+      -1.0, -1.0, 1.0, 1.0,
+      Math.random(), Math.random(), Math.random(), 1.0,
+
+      // Left Face - Upper
+      -1.0, 1.0, -1.0, 1.0,
+      Math.random(), Math.random(), Math.random(), 1.0,
+      -1.0, 1.0, 1.0, 1.0,
+      Math.random(), Math.random(), Math.random(), 1.0,
+      -1.0, -1.0, 1.0, 1.0,
+      Math.random(), Math.random(), Math.random(), 1.0,
+      // Left Face - Lower
+      -1.0, 1.0, -1.0, 1.0,
+      Math.random(), Math.random(), Math.random(), 1.0,
+      -1.0, -1.0, 1.0, 1.0,
+      Math.random(), Math.random(), Math.random(), 1.0,
+      -1.0, -1.0, -1.0, 1.0,
+      Math.random(), Math.random(), Math.random(), 1.0,
+
+      // Right Face - Upper
+      1.0, 1.0, -1.0, 1.0,
+      Math.random(), Math.random(), Math.random(), 1.0,
+      1.0, 1.0, 1.0, 1.0,
+      Math.random(), Math.random(), Math.random(), 1.0,
+      1.0, -1.0, 1.0, 1.0,
+      Math.random(), Math.random(), Math.random(), 1.0,
+      // Right Face - Lower
+      1.0, 1.0, -1.0, 1.0,
+      Math.random(), Math.random(), Math.random(), 1.0,
+      1.0, -1.0, 1.0, 1.0,
+      Math.random(), Math.random(), Math.random(), 1.0,
+      1.0, -1.0, -1.0, 1.0,
+      Math.random(), Math.random(), Math.random(), 1.0,
      ];
 
 
@@ -315,16 +345,17 @@ Exercise 04 - CMSC 161 -->
           if (code=="scaled"){
             Sx = (document.getElementById("Sx")).value;
             Sy = (document.getElementById("Sy")).value;
+            Sz = (document.getElementById("Sz")).value;
 
-            //Transformation matrix when scaling
+            // Transformation matrix when scaling
             transformationMatrix = [
             Sx,0,0,0,
             0,Sy,0,0,
             0,0,1,0,
             0,0,0,1
             ];
-
-            
+            var scale = [Sx, Sy, Sz];
+            glMatrix.mat4.scale(modelMatrix, modelMatrix, scale);
           }
 
           if(code=="rotate"){
@@ -343,8 +374,33 @@ Exercise 04 - CMSC 161 -->
             glMatrix.mat4.rotateZ(modelMatrix, modelMatrix, glMatrix. glMatrix.toRadian(degrees));
 
           }
-      	
 
+          if(code=="project"){
+            view1 = (document.getElementById("vpoint-1")).value;
+            view2 = (document.getElementById("vpoint-2")).value;
+            view3 = (document.getElementById("vpoint-3")).value;
+            view4 = (document.getElementById("vpoint-4")).value;
+
+            eyepoint1 = (document.getElementById("eyepoint-1")).value;
+            eyepoint2 = (document.getElementById("eyepoint-2")).value;
+            eyepoint3 = (document.getElementById("eyepoint-3")).value;
+            eyepoint4 = (document.getElementById("eyepoint-4")).value;
+
+            up1 = (document.getElementById("up-1")).value;
+            up2 = (document.getElementById("up-2")).value;
+            up3 = (document.getElementById("up-3")).value;
+            up4 = (document.getElementById("up-4")).value;
+
+            glMatrix.mat4.lookAt(viewMatrix, [view1, view2, view3, view4], [eyepoint1, eyepoint2, eyepoint3, eyepoint4], [up1, up2, up3, up4]);
+          }
+      	
+          if(code=="frustum"){
+            frustfov = (document.getElementById("frustum-fov")).value;
+            frustNear = (document.getElementById("frustum-near")).value;
+            frustFar = (document.getElementById("frustum-far")).value;
+            glMatrix.mat4.perspective(projectionMatrix, frustfov, gl.canvas.clientWidth / gl.canvas.clientHeight, frustNear, frustFar);
+
+          }
       	  
         //rendering again after reflecting the transformations
       	drawScene();
@@ -357,6 +413,8 @@ Exercise 04 - CMSC 161 -->
      document.getElementById("translate").addEventListener("click", redraw("both"));
      document.getElementById("scale").addEventListener("click",redraw("scaled"));
      document.getElementById("rotate").addEventListener("click", redraw("rotate"));
+     document.getElementById("project").addEventListener("click", redraw("project"));
+     document.getElementById("frustum").addEventListener("click", redraw("frustum"));
 }
     // call the main program
     main();
