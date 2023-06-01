@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Introduction to WebGL</title>
+    </head>
+    <body>
+        <img src="dog.jpg" width="1000" height="1176" style="position: absolute;">
+        <canvas id="output" width="1000" height="1176" style="position: relative;"></canvas>
+        <script id="vertex-shader" type="x-shader/x-fragment">#version 300 es
+            in vec4 a_position;
+            in float a_point_size;
+            void main(){
+                gl_Position = a_position;
+                gl_PointSize = a_point_size;
+            }
+        </script>
+
+        <script id="fragment-shader" type="notjs">#version 300 es
+            precision mediump float;
+            out vec4 outColor;
+            void main() {
+                outColor = vec4(1, 0, 0, 1); 
+            }
+        </script>
+        <script src="week01.js">
+
+        </script>
+    </body>
+</html>

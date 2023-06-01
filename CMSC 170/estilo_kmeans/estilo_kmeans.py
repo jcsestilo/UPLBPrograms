@@ -38,6 +38,7 @@ def main():
     lines = file.readlines()
     for l in lines:
         table = list(map(float, l.strip("\n").split(",")))
+        # print(table)
         plot.append([table[attribute[0]], table[attribute[1]]])
 
     # randomize k plots
@@ -50,21 +51,30 @@ def main():
             continue
         centroidsIndex.append(randomized)
         centroids.append(plot[randomized])
+    # centroidsIndex.append(11.76)
+    # centroidsIndex.append(2)
+    # centroids.append([11.76, 2.68])
+    # centroids.append([13.77, 1.9])
+    print(centroids)
+    # print(centroidsIndex)
     orig_centroids = centroids.copy() # will contain the original centroids because centroids list will be changing per loop
     centroid_history = []
     centroidsChanging = True
     # print(centroids, centroidsIndex)
     while(centroidsChanging):
         clusters = [[orig_centroids[i]] for i in range(0,len(centroids))] # 2d array, per element is a list containing the plots belonging to that centroid
+        # print(clusters)
         # a. Correspond data points to the nearest cluster (compute distance to each cluster’s centroid, then choose closest cluster).
         # compute distance to each cluster’s centroid
+        # print(centroids)
+        # print(plot)
         for i in range(0, len(plot)):
             distances = []
 
             for d in range(0, len(centroidsIndex)):
                 # if we are evaluating a point that is also that centroid
-                if (centroidsIndex[d] == i):
-                    continue
+                # if (centroidsIndex[d] == i):
+                #     continue
 
                 distance = 0.0
                 # euclidean distance
@@ -74,27 +84,28 @@ def main():
                 
                 # append a tuple, where d is the index for that particular centroid
                 distances.append((centroidsIndex[d], distance))
-
+            print(distances)
             # then choose closest cluster
             # sort the distances list (list of tuples) according to the second element of each tuple (distance)
             sorted_distances = sorted(distances, key=lambda t: t[1])
+            print(sorted_distances)
             closest_centroid = sorted_distances[0] # first element is the closest centroid (index in plot of the closest centroid, distance)
             
             # centroidsIndex.index(closest_centroid[0])
             #     - 0 to k. gives the index of the value in the centroidsIndex array
             #     - ex. plot[i] is closest to centroid 0. therefore, append it to clusters list in index 0
             clusters[centroidsIndex.index(closest_centroid[0])].append(plot[i])
-        
+        # print(clusters)
         # b. Update centroids by averaging corresponding coordinates of the feature vectors. 
         new_centroids = []
         # clusters is a 3d array, each element is a list of points for that particular cluster. [   [   [],[],[]    ] , [   [],[],[]    ]   ]
-        for plots in clusters:
-            class_count = len(plots) # get the class count
+        for q in range(len(clusters)):
+            class_count = len(clusters[q]) # get the class count
             averages = []
-            for g in range(len(plots[0])): # per element, x, y
+            for g in range(len(clusters[q][0])): # per element, x, y
                 sum = 0.0
-                for p in range(0, len(plots)): # per column
-                    sum += plots[p][g]
+                for p in range(0, len(clusters[q])): # per column
+                    sum += clusters[q][p][g]
                 averages.append(sum/class_count)
             new_centroids.append(averages)
 
@@ -105,7 +116,7 @@ def main():
                 break
             else:
                 centroidsChanging = False
-
+        # print(clusters)
         centroid_history.append(new_centroids)
         if(centroidsChanging):
             centroids.clear()
@@ -136,9 +147,8 @@ def main():
             x.append(point[0])
             y.append(point[1])
             colors.append(i)
-    fig = plt.figure()
     ax = fig.add_subplot(111)
-    scatter = ax.scatter(x, y, c=colors, s=50)
+    ax.scatter(x, y, c=colors, s=10)
     plt.savefig("scatterplot")
 
 main()
