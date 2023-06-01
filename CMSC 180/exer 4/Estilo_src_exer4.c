@@ -17,9 +17,7 @@ struct thread_args{
     float *M;
 };
 
-// todo: ipasa yung per row na lang na divisible by 10. ayun na lang yung ipapasa ng master.
-// limited kasi may MTU sa mga pagpapasa ng mga shits
-// by point na lang yung ipasa ng master sa slave
+// todo: yung submatrix na first row and last row dapat ay nakakapag interpolate din
 
 void FCCBoundary(float *M, int size){
     int x1, x2, y1, y2, i, j;
@@ -60,15 +58,15 @@ void FCCBoundary(float *M, int size){
 }
 
 //float *M, int size, int startingRow, int endingRow
-void* terrain_inter(void *args_ptr){
+void* terrain_inter(float *M, int size, int startingRow, int endingRow){
     int x1, x2, y1, y2, i, j;
     char str[20];
 
-    struct thread_args* args = (struct thread_args*) args_ptr;
-    int startingRow = args->startingRow;
-    int endingRow = args->endingRow;
-    int size = args->size;
-    float *M = args->M;
+    // struct thread_args* args = (struct thread_args*) args_ptr;
+    // int startingRow = args->startingRow;
+    // int endingRow = args->endingRow;
+    // int size = args->size;
+    // float *M = args->M;
 
     // Interpolation for inside the Bounding Box FCC method
     for (int i = startingRow; i <= endingRow; i++)
@@ -405,6 +403,22 @@ int main(){
                 printf("\n");
             }
         printf("\n");
+
+        // endingRow = endingRow;
+        // startingRow = startingRow;
+        // M = subM;
+        // size = size;
+        terrain_inter(subM, columnAmount, 0, rowsAmount);
+
+        printf("DONE INTERPOLATION\n");
+        // PRINT MATRIX
+        for (int i = 0; i < rowsAmount; i++) {
+                for (int j = 0; j < columnAmount; j++)
+                    printf("%f ", subM[i*size + j]);
+                printf("\n");
+            }
+        printf("\n");
+        // pthread_create(&threads[i], NULL, terrain_inter, (void *) &args);
 
         // while (1)
         // {
