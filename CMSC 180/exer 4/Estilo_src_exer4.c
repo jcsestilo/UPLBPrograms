@@ -342,7 +342,7 @@ int main(){
         memset(&serverAddress, 0, sizeof(serverAddress));
         serverAddress.sin_family = AF_INET;
         serverAddress.sin_port = htons(port);
-        serverAddress.sin_addr.s_addr = inet_addr(masterAddress);
+        serverAddress.sin_addr.s_addr = INADDR_ANY;
 
         // Bind the socket to the server address
         if (bind(serverSocket, (struct sockaddr *)&serverAddress, sizeof(serverAddress)) == -1) {
