@@ -126,6 +126,7 @@ int main(){
     if(status==0){
         int clientSocket;
         int numIPAddresses, numPorts, *ports;
+        char **IPAddresses;
         struct sockaddr_in serverAddress;
         char ipAddress[20];
         char buffer[1024];
@@ -156,10 +157,17 @@ int main(){
         }
         fscanf(file, "%s", ipAddress);
         fscanf(file, "%d", &numPorts);
-        // Allocate memory for the ports array
+        numIPAddresses = numPorts;
+        // Allocate memory for the ports (and IPAddresses) array
         ports = (int *)malloc(numPorts * sizeof(int));
+        IPAddresses = (char**)malloc(numIPAddresses * sizeof(char*));
+        // Allocate memory for each string
+        for (int i = 0; i < numIPAddresses; i++) {
+            IPAddresses[i] = (char*)malloc(20 * sizeof(char));
+        }
         // Read the ports
         for (int i = 0; i < numPorts; i++) {
+            fscanf(file, "%s", IPAddresses[i]);
             fscanf(file, "%d", &ports[i]);
         }
         fclose(file);
@@ -171,12 +179,12 @@ int main(){
         FCCBoundary(M, size); 
 
         // PRINT MATRIX
-        for (int i = 0; i < size; i++) {
-                for (int j = 0; j < size; j++)
-                    printf("%f ", M[i*size + j]);
-                printf("\n");
-            }
-        printf("\n");
+        // for (int i = 0; i < size; i++) {
+        //         for (int j = 0; j < size; j++)
+        //             printf("%f ", M[i*size + j]);
+        //         printf("\n");
+        //     }
+        // printf("\n");
 
         rowsAmount = ((size - 2)/numPorts) + 1;
         for (int i = 0; i < numPorts; i++)
@@ -191,6 +199,8 @@ int main(){
             memset(&serverAddress, 0, sizeof(serverAddress));
             serverAddress.sin_family = AF_INET;
             serverAddress.sin_port = htons(ports[i]);
+            // serverAddress.sin_addr.s_addr = inet_addr(IPAddresses[i]);
+            serverAddress.sin_addr.s_addr = INADDR_ANY; 
             
             // Convert IP address from string to binary form
             if (inet_pton(AF_INET, ipAddress, &(serverAddress.sin_addr)) <= 0) {
@@ -297,11 +307,16 @@ int main(){
         // Free memory
         free(M);
         free(ports);
+        for (int i = 0; i < numIPAddresses; i++) {
+            free(IPAddresses[i]);
+        }
+        free(IPAddresses);
 
     } else if (status==1){
         int clientSocket, serverSocket;
         struct sockaddr_in serverAddress, clientAddress;
         char masterAddress[20];
+        int masterPort;
         
         int bytesReceived, clientAddressLength;
 
@@ -313,6 +328,8 @@ int main(){
             return 0;
         }
         fscanf(file, "%s", masterAddress);
+        fscanf(file, "%d", &masterPort);
+        fclose(file);
 
         // Create client socket
         serverSocket = socket(AF_INET, SOCK_STREAM, 0);
@@ -325,7 +342,7 @@ int main(){
         memset(&serverAddress, 0, sizeof(serverAddress));
         serverAddress.sin_family = AF_INET;
         serverAddress.sin_port = htons(port);
-        serverAddress.sin_addr.s_addr = INADDR_ANY;
+        serverAddress.sin_addr.s_addr = inet_addr(masterAddress);
 
         // Bind the socket to the server address
         if (bind(serverSocket, (struct sockaddr *)&serverAddress, sizeof(serverAddress)) == -1) {
@@ -334,7 +351,7 @@ int main(){
             return 1;
         }
 
-        if (listen(serverSocket, 1) == -1) {
+        if (listen(serverSocket, 5) == -1) {
             perror("Failed to listen");
             close(serverSocket);
             return 1;
@@ -367,7 +384,8 @@ int main(){
             close(serverSocket);
             return 1;
         }
-        printf("rowsAmount: %d, columnAmont: %d,,,, %d\n", rowsAmount, columnAmount, rowsAmount*columnAmount);
+        
+        // printf("rowsAmount: %d, columnAmont: %d,,,, %d\n", rowsAmount, columnAmount, rowsAmount*columnAmount);
         // create a dynamic array with the received rows amount and the column amount
         float* subM = (float *)malloc((rowsAmount*columnAmount) * sizeof(float));
         memset(subM, 0, rowsAmount*columnAmount*sizeof(float));
@@ -397,27 +415,28 @@ int main(){
         }
 
         // PRINT MATRIX
-        for (int i = 0; i < rowsAmount; i++) {
-                for (int j = 0; j < columnAmount; j++)
-                    printf("%f ", subM[i*size + j]);
-                printf("\n");
-            }
-        printf("\n");
+        // for (int i = 0; i < rowsAmount; i++) {
+        //         for (int j = 0; j < columnAmount; j++)
+        //             printf("%f ", subM[i*size + j]);
+        //         printf("\n");
+        //     }
+        // printf("\n");
 
         // endingRow = endingRow;
         // startingRow = startingRow;
         // M = subM;
         // size = size;
+        // FCCBoundary();
         terrain_inter(subM, columnAmount, 0, rowsAmount);
 
         printf("DONE INTERPOLATION\n");
         // PRINT MATRIX
-        for (int i = 0; i < rowsAmount; i++) {
-                for (int j = 0; j < columnAmount; j++)
-                    printf("%f ", subM[i*size + j]);
-                printf("\n");
-            }
-        printf("\n");
+        // for (int i = 0; i < rowsAmount; i++) {
+        //         for (int j = 0; j < columnAmount; j++)
+        //             printf("%.2f ", subM[i*size + j]);
+        //         printf("\n");
+        //     }
+        // printf("\n");
         // pthread_create(&threads[i], NULL, terrain_inter, (void *) &args);
 
         // while (1)
