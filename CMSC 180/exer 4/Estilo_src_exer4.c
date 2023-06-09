@@ -200,21 +200,21 @@ int main(){
             serverAddress.sin_family = AF_INET;
             serverAddress.sin_port = htons(ports[i]);
             // serverAddress.sin_addr.s_addr = inet_addr(IPAddresses[i]);
-            serverAddress.sin_addr.s_addr = INADDR_ANY; 
+            // serverAddress.sin_addr.s_addr = INADDR_ANY; 
             
             // Bind the socket to the server address
-            if (bind(clientSocket, (struct sockaddr *)&serverAddress, sizeof(serverAddress)) == -1) {
-                perror("Failed to bind socket");
-                close(clientSocket);
-                return 1;
-            }
-
-            // Convert IP address from string to binary form
-            // if (inet_pton(AF_INET, ipAddress, &(serverAddress.sin_addr)) <= 0) {
-            //     perror("Failed to convert IP address");
+            // if (bind(clientSocket, (struct sockaddr *)&serverAddress, sizeof(serverAddress)) == -1) {
+            //     perror("Failed to bind socket");
             //     close(clientSocket);
             //     return 1;
             // }
+
+            // Convert IP address from string to binary form
+            if (inet_pton(AF_INET, IPAddresses[i], &(serverAddress.sin_addr)) <= 0) {
+                perror("Failed to convert IP address");
+                close(clientSocket);
+                return 1;
+            }
 
             // Connect to the server
             if (connect(clientSocket, (struct sockaddr *)&serverAddress, sizeof(serverAddress)) == -1) {
@@ -224,7 +224,7 @@ int main(){
             }
 
 
-            printf("Connected to the slave\n");
+            printf("Connected to the slave %d\n", ports[i]);
 
             // Send data to the slave
             // char *message = "Hello, slave!";
@@ -339,7 +339,7 @@ int main(){
         fclose(file);
 
         // Create client socket
-        serverSocket = socket(AF_INET, SOCK_STREAM, 1);
+        serverSocket = socket(AF_INET, SOCK_STREAM, 0);
         if (serverSocket == -1) {
             perror("Failed to create client socket");
             return 1;
@@ -358,7 +358,7 @@ int main(){
             return 1;
         }
 
-        if (listen(serverSocket, 5) == -1) {
+        if (listen(serverSocket, 1) == -1) {
             perror("Failed to listen");
             close(serverSocket);
             return 1;
@@ -366,7 +366,8 @@ int main(){
 
         // Accept the connection from the master
         clientAddressLength = sizeof(clientAddress);
-        clientSocket = accept(serverSocket, (struct sockaddr *)&clientAddress, &clientAddressLength);
+        clientSocket = accept(serverSocket, NULL, NULL);
+        // clientSocket = accept(serverSocket, (struct sockaddr *)&clientAddress, &clientAddressLength);
         if (clientSocket == -1) {
             perror("Failed to accept connection");
             close(serverSocket);
