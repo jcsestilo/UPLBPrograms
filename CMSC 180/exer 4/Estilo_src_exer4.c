@@ -439,12 +439,12 @@ int main(){
 
         printf("DONE INTERPOLATION\n");
         // PRINT MATRIX
-        // for (int i = 0; i < rowsAmount; i++) {
-        //         for (int j = 0; j < columnAmount; j++)
-        //             printf("%.2f ", subM[i*size + j]);
-        //         printf("\n");
-        //     }
-        // printf("\n");
+        for (int i = 0; i < rowsAmount; i++) {
+                for (int j = 0; j < columnAmount; j++)
+                    printf("%.2f ", subM[i*size + j]);
+                printf("\n");
+            }
+        printf("\n");
         // pthread_create(&threads[i], NULL, terrain_inter, (void *) &args);
 
         // while (1)
