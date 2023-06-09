@@ -51,7 +51,7 @@ void FCCBoundary(float *M, int size){
                     sprintf(str, "%d.%d", (i-x1)/(x2-x1), (i-x1)%(x2-x1));
                     M[i*size+j] = y1 +  (atof(str)) * (y2-y1);
                 }
-            }
+            } 
         }
         
     }
